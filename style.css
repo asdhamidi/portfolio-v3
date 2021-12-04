@@ -1,0 +1,358 @@
+* {
+    scroll-behavior: smooth;
+    transform-origin: center;
+}
+
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0%;
+}
+
+body.dark-theme {
+    color: white;
+    background-color: #121212;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    height: calc(2rem + 2px);
+    background-color: white;
+    font-size: 1.25rem;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.nav-1 {
+    display: flex;
+    gap: 1rem;
+    font-size: 1rem;
+}
+
+.title {
+    font-weight: bolder;
+    transition: all ease-in-out 300ms;
+}
+
+.title:hover {
+    color: blueviolet;
+}
+
+body.dark-theme .title:hover {
+    color: #ffec00;
+}
+
+.title-scroll {
+    font-size: 1.5rem;
+    position: fixed;
+    left: 2.5rem;
+    top: 2.5rem;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    opacity: 0.5;
+}
+
+.links a {
+    text-decoration: none;
+    margin-right: 1rem;
+    border: 25px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+    transition: all ease-in-out 200ms;
+}
+
+.links a {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+}
+
+body.dark-theme .links a:before {
+    background-color: #ffec00;
+}
+
+.links a:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    bottom: 0;
+    background: blueviolet;
+    height: 2px;
+    -webkit-transition-property: left, right;
+    transition-property: left, right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.links a:hover {
+    color: blueviolet;
+}
+
+body.dark-theme .links a:hover {
+    color: #ffec00;
+}
+
+.links a:hover:before, .links a:focus:before, .links a:active:before {
+    left: 0;
+    right: 0;
+}
+  
+.theme-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all ease-in-out 300ms;
+}
+
+.theme-scroll {
+    font-size: 1.5rem;
+    position: fixed;
+    left: 2.5rem;
+    bottom: 2.5rem;
+}
+
+.theme-button img{
+    background-color: #BBF;
+    height: 1.25rem;
+    width: 1.25rem;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    transition: all ease-in-out 300ms;
+}
+
+body.dark-theme .theme-button img{
+    background-color: #666;
+}
+
+.theme-button img:hover {
+    border: 1px solid #0005;
+}
+
+body.dark-theme .theme-button img:hover {
+    border: 1px solid #99f;
+}
+
+.theme-button img {
+    padding: 0.5rem;
+}
+
+.sidenav {
+    position: fixed;
+    top: 40vh;
+    opacity: 0;
+    left: -1rem;
+    font-weight: bold;
+    transition: all ease-in 500ms;
+}
+
+.sidenav-active {
+    opacity: 1;
+    left: 0.5rem;
+}
+
+.sidenav a {
+    margin: 0.25rem;
+}
+
+.sidenav span {
+    font-size: 1.5rem;
+    line-height: 1rem;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    transition: all 300ms ease-in-out;
+    border: none;
+    font-size: 1rem;
+    background-color: transparent;
+    color: #666;
+}
+
+.active, .sidenav a:hover, .link:hover {
+    color: blueviolet;
+}
+
+body.dark-theme .active, body.dark-theme .sidenav a:hover, body.dark-theme .link:hover {
+    color: #ffec00;
+}
+
+.active {
+    font-size: 1.25rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0 25%;
+    height: 100vh;
+}
+
+section:nth-child(even) {
+    background: linear-gradient(180deg, #DDD, #fff);
+}
+
+body.dark-theme section:nth-child(even) {
+    background: linear-gradient(180deg, #121212, #000);
+}
+
+section:nth-child(odd) {
+    background: url("./assets/bg.svg") no-repeat;
+    background-size: cover;
+}
+
+body.dark-theme section:nth-child(odd) {
+    background: url("./assets/bg-dark.svg") no-repeat;
+    background-size: cover;
+}
+
+.front {
+    margin: 0%;
+    background: none;
+    height: 100vh;
+    margin-top: -25vh;
+    opacity: 1;
+}
+
+.heading {
+    margin: 0.5rem 0;
+    font-size: 3rem;
+    color: black;
+    font-weight: bolder;
+}
+
+body.dark-theme .heading {
+    color: white;
+}
+
+.content {
+    font-size: 1.5rem;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main {
+    height: 100vh;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    background-color: #FFF;
+}
+
+body.dark-theme footer {
+    background-color: #000;
+}
+
+footer svg {
+    transition: all cubic-bezier(.17,.67,.29,1.2) 300ms;
+    margin-left: 0.15rem;
+}
+
+footer svg:hover {
+    transform: scale(1.2);    
+}
+
+.content button {
+    font-size: 1.25rem;
+    background-color: transparent;
+    border-radius: 15px;
+    border: 1px solid gray;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    transition: all ease-in-out 300ms;
+}
+
+body.dark-theme .content button {
+    color: white;
+    border: 1px solid white;
+}
+
+body.dark-theme .content button:hover {
+    border: 1px solid #ffec00;
+    background-color: #ffec00;
+    color: black;
+}
+
+.content button:hover {
+    border: 1px solid blueviolet;
+    background-color: blueviolet;
+    color: white;
+}
+
+h1, h2, h3, h4, p,i, b{
+    margin: 1rem 0;
+}
+
+.content-box {
+    padding: 0%;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(4, auto); 
+    gap: 15px 10px;
+}
+
+.content-box p {
+    margin: 5px;
+}
+
+.skill-button {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    justify-content: flex-start;
+    padding: 0.25rem;
+    margin: 0.5rem;
+    box-shadow: 0px 0px 10px #CCC;
+    background-color: #FFF;
+    border-radius: 0.25rem;
+}
+
+body.dark-theme .skill-button {
+    box-shadow: 0 0 10px #fff3;
+    background-color: #121212;
+}
+
+.skill-button svg {
+    margin-right: 10px;
+    height: 2rem;
+}
+
+.skill-button:hover {
+    transition: all 500ms ease-in-out;
+    box-shadow: 0px 0px 10px #8a2be7;
+}
+
+body.dark-theme .skill-button:hover {
+    box-shadow: 0 0 10px #ffec0075;
+}

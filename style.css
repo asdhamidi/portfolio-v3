@@ -1,11 +1,13 @@
 * {
     scroll-behavior: smooth;
     transform-origin: center;
+    transition: all ease-in-out 50ms;
 }
 
 body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0%;
+    background-color: white;
 }
 
 body.dark-theme {
@@ -19,10 +21,11 @@ nav {
     align-items: center;
     padding-top: 1rem;
     height: calc(2rem + 2px);
-    background-color: white;
+    background-color: transparent;
     font-size: 1.25rem;
-    width: 50%;
-    margin-left: 25%;
+    width: 60%;
+    margin-left: 20%;
+    z-index: 5;
 }
 
 .nav-1 {
@@ -33,7 +36,7 @@ nav {
 
 .title {
     font-weight: bolder;
-    transition: all ease-in-out 300ms;
+    transition: all ease-in-out 100ms;
 }
 
 .title:hover {
@@ -59,7 +62,7 @@ ul {
     opacity: 0.5;
 }
 
-.links a {
+.links a, .links-mobile a  {
     text-decoration: none;
     margin-right: 1rem;
     border: 25px;
@@ -151,18 +154,22 @@ body.dark-theme .theme-button img:hover {
     padding: 0.5rem;
 }
 
+.hamb, .links-menu {
+    display: none;
+}
+
 .sidenav {
     position: fixed;
     top: 40vh;
     opacity: 0;
-    left: -1rem;
+    left: 0.5rem;
     font-weight: bold;
     transition: all ease-in 500ms;
 }
 
 .sidenav-active {
     opacity: 1;
-    left: 0.5rem;
+    left: 1.5rem;
 }
 
 .sidenav a {
@@ -208,36 +215,49 @@ section {
     justify-content: center;
     align-items: flex-start;
     margin: 0;
-    padding: 0 25%;
+    width: 60%;
+    padding: 0 20%;
     height: 100vh;
 }
 
 section:nth-child(even) {
-    background: linear-gradient(180deg, #DDD, #fff);
+    background: url("./assets/bg.svg") no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 body.dark-theme section:nth-child(even) {
-    background: linear-gradient(180deg, #121212, #000);
+    background: url("./assets/bg-dark.svg") no-repeat;
 }
 
 section:nth-child(odd) {
-    background: url("./assets/bg.svg") no-repeat;
-    background-size: cover;
+    background: linear-gradient(180deg, #DDD, #fff);
+    
 }
 
 body.dark-theme section:nth-child(odd) {
-    background: url("./assets/bg-dark.svg") no-repeat;
-    background-size: cover;
+    background: linear-gradient(180deg, #121212, #000);
 }
 
 .front {
-    margin: 0%;
-    background: none;
-    height: 100vh;
-    margin-top: -25vh;
-    opacity: 1;
+    height: 80vh;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: -10vh;
+    padding: 10vh 20%;
+    background: url("./assets/front.svg") no-repeat;
+    background-position: top;
+    background-size: cover;
 }
 
+body.dark-theme .front {
+    background: url("./assets/front-dark.svg");
+    background-position: top;
+    background-size: cover;
+}
 .heading {
     margin: 0.5rem 0;
     font-size: 3rem;
@@ -252,6 +272,7 @@ body.dark-theme .heading {
 .content {
     font-size: 1.5rem;
     font-weight: 300;
+    margin: 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -288,7 +309,8 @@ footer svg:hover {
     border-radius: 15px;
     border: 1px solid gray;
     padding: 0.5rem;
-    margin-right: 0.5rem;
+    margin: 0.5rem;
+    margin-left: 0;
     transition: all ease-in-out 300ms;
 }
 
@@ -316,9 +338,17 @@ h1, h2, h3, h4, p,i, b{
 .content-box {
     padding: 0%;
     display: grid;
+    grid-template-columns: repeat(3, 50%);
+    grid-template-rows: repeat(3, 40%); 
+    gap: 5px 5px;
+}
+
+#Projects .content {
+    gap: 0.5rem;
+    display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(4, auto); 
-    gap: 15px 10px;
+    gap: 10px;
 }
 
 .content-box p {
@@ -332,15 +362,18 @@ h1, h2, h3, h4, p,i, b{
     height: auto;
     justify-content: flex-start;
     padding: 0.25rem;
-    margin: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
     box-shadow: 0px 0px 10px #CCC;
     background-color: #FFF;
     border-radius: 0.25rem;
+    border: 1px solid #8a2be780;
 }
 
 body.dark-theme .skill-button {
     box-shadow: 0 0 10px #fff3;
     background-color: #121212;
+    border: 1px solid #ffec0050;
 }
 
 .skill-button svg {
@@ -355,4 +388,277 @@ body.dark-theme .skill-button {
 
 body.dark-theme .skill-button:hover {
     box-shadow: 0 0 10px #ffec0075;
+}
+
+.social {
+    margin: 0.5rem 0;
+}
+
+svg {
+    margin: 0;
+    margin-right: 0.25rem;
+    transition: transform .15s cubic-bezier(.17,.67,.29,2.71) 0s;
+}
+
+svg:hover {
+    transform: scale(1.1);
+    filter: invert(41%) sepia(94%) saturate(1636%) hue-rotate(129deg) brightness(92%) contrast(97%);
+}
+
+body.dark-theme svg:hover {
+    filter: invert(89%) sepia(67%) saturate(1730%) hue-rotate(359deg) brightness(109%) contrast(102%);   
+}
+
+.project
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 15rem;
+    width: 15rem;
+    font-size: large;
+    border: 2px solid #8a2be760;
+    border-radius: 10px;
+    padding: 0.25rem;
+    background-color: #FFF;
+    text-align: center;
+}
+
+body.dark-theme .project{
+    background-color: #121212;
+    border: 2px solid #ffec0050;
+}
+
+.project:hover {
+    border: 2px solid #8a2be7;
+}
+
+body.dark-theme .project:hover {
+    border: 2px solid #ffec00;
+}
+
+.project p {
+    font-size: 1rem;
+}
+
+.project svg {
+    transform: scale(0.75);
+}
+.project h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.tech {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0rem;
+}
+
+.tech li {
+    border-radius: 50px;
+    font-size: 1rem;
+    background-color: #6663;
+    margin: 0.25rem;
+    padding: 7.5px;
+    border: none;
+}
+
+body.dark-theme .tech li {
+    background-color: #ccc7;
+    color: black;
+    border: none;
+}
+
+.tech li:hover {
+    transition: all 300ms ease-in-out;
+    border: none;
+    background-color: #9999;
+}
+
+body.dark-theme .tech li:hover {
+    border: none;
+    background-color: #CCC;
+}
+
+h1, h2, h3, span, p {
+    margin: 0.5rem 0;
+}
+
+.hamb {
+    z-index: 5;
+}
+
+.links-menu {
+    background-color: white;
+    z-index: 2;
+
+}
+
+.links-mobile {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: white;
+    position: absolute;
+    opacity: 1;
+    height: 100vh;
+    width: 100vw;
+    top: 0%;
+    left: 0%;
+}
+
+.links-mobile li{
+    margin: 1rem;
+    padding: 0.25rem;
+    width: 80%;
+    text-align: left;
+    border-bottom: 1px solid black;
+}
+
+.hamb input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: 22px;
+  left: 14px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+.hamb span
+{
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    margin-right: 1rem;
+    background: #cdcdcd;
+    border-radius: 3px;
+}
+
+.menu-active {
+    display: flex;
+}
+
+@media screen and (max-width: 1200px) {
+    section {
+        height: auto;
+        padding-top: 5rem;
+    }
+    #Projects .content {
+        grid-template-columns: repeat(2, auto);
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    section, .front{
+        padding-left: 10%;
+        padding-right: 10%;
+        width: 80%;
+    }
+    
+    nav {
+        margin-left: 10%;
+        width: 80%;
+    }
+    
+    section .content {
+        font-size: 1rem;
+    }
+    
+    .sidenav {
+        display: none;
+    }
+    
+    .theme-scroll {
+        display: none;
+    }
+    
+    .title-scroll {
+        display: none;
+    }
+ 
+    .content-box {
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(4, auto); 
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .content-box {
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(4, auto); 
+
+    }
+    
+    #Projects .content {
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(4, auto); 
+    }
+    
+    .project {
+        width: auto;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .front {
+        height: 100vh;
+        padding: 3rem 5%;
+        width: 90%;
+    }
+
+
+    section {
+        padding: 3rem 5%;
+        width: 90%;
+        align-items: center;
+    }
+
+    .content-box {
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(4, auto); 
+    }
+
+    .skill-button {
+        padding: 0.1rem;
+        width: 40vw;
+    }
+
+    .heading {
+        align-self:flex-start;
+    }
+
+    .links {
+        display: none;
+    }
+
+    nav {
+        align-items: flex-start;
+        justify-content: left;
+        margin-left: 5%;
+    }
+    
+    .title {
+        display: none;
+    }
+
+    .hamb, .links-menu {
+        display: block;
+    }
+
 }

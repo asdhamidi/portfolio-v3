@@ -11,18 +11,29 @@
 <body>
     <nav>
         <div class="nav-1">
-            <div class="title"><a href="https://www.asdhamidi.github.io">AH.</a></div>
-            <div class="links">
-                <ul>
-                    <li><a href="#About">About</a></li>
-                    <li><a href="#Skills">Skills</a></li>
-                    <li><a href="#Projects">Projects</a></li>
-                    <li><a href="#Contact">Contact</a></li>
-                </ul>
-            </div>
+            <div class="title"><a href="#front">AH.</a></div>
+            <ul class="links">
+                <li><a href="#About">About</a></li>
+                <li><a href="#Skills">Skills</a></li>
+                <li><a href="#Projects">Projects</a></li>
+                <li><a href="#Academics">Academics</a></li>
+            </ul>
+        </div>
+        <div class="hamb">
+            <input type="checkbox" id="menu-check" onclick="openMenu()"/>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="links-menu">
+            <ul class="links-mobile" onclick="openMenu()">
+                <li><a href="#About">About</a></li>
+                <li><a href="#Skills">Skills</a></li>
+                <li><a href="#Projects">Projects</a></li>
+                <li><a href="#Academics">Academics</a></li>
+            </ul>
         </div>
         <div class="theme-button">
-            <img src="./assets/link.svg">
             <img src="./assets/day.svg" onclick="changeTheme()" id="theme">
         </div>
     </nav>
@@ -42,28 +53,96 @@
         </button>
         <button class="link" id="4">
             <span>•</span>
-            <a href="#Contact">Contact</a>
+            <a href="#Academics">Academics</a>
         </button>
     </div>
 
     <main>
-        <section class="front" style="background-color: #fff;">
+        <div class="front" id="front" style="background-color: #fff;">
             <div>
                 <span style="font-size: 1.1rem;">Hey there!</span>
                 <h1 style="margin: 0.5rem 0; font-size: 3rem;">I'm Asad.</h1>
                 <span style="opacity: 0.5; font-size: 1.2rem;">Web Developer. DSA enthusiast. Chess noob.</span>
             </div>
-        </section>
+            <div class="social">
+                <ul style="padding: 0px;margin: 0px;">
+                    <li>
+                        <a href="mailto:asad.hamidi119@gmail.com" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#666" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <rect x="3" y="5" width="18" height="14" rx="2" />
+                                <polyline points="3 7 12 13 21 7" />
+                            </svg>
+                        </a>  
+                    </li>
+                    <li>
+                        <a href="https://github.com/asdhamidi" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#666" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+                            </svg>
+                        </a>  
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/asadullahhamidi/" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#666" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <rect x="4" y="4" width="16" height="16" rx="2" />
+                                <line x1="8" y1="11" x2="8" y2="16" />
+                                <line x1="8" y1="8" x2="8" y2="8.01" />
+                                <line x1="12" y1="16" x2="12" y2="11" />
+                                <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+                            </svg>
+                        </a>  
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/asad.codes" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#666" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <rect x="4" y="4" width="16" height="16" rx="4" />
+                                <circle cx="12" cy="12" r="3" />
+                                <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.asdhamidi.medium.com" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-medium" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#666" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <rect x="4" y="4" width="16" height="16" rx="2" />
+                                <path d="M8 9h1l3 3l3 -3h1" />
+                                <line x1="8" y1="15" x2="10" y2="15" />
+                                <line x1="14" y1="15" x2="16" y2="15" />
+                                <line x1="9" y1="9" x2="9" y2="15" />
+                                <line x1="15" y1="9" x2="15" y2="15" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-biohazard" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#666" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <circle cx="12" cy="12" r="2" />
+                                <path d="M11.939 14c0 .173 .048 .351 .056 .533l0 .217a4.75 4.75 0 0 1 -4.533 4.745l-.217 0m-4.75 -4.75a4.75 4.75 0 0 1 7.737 -3.693m6.513 8.443a4.75 4.75 0 0 1 -4.69 -5.503l-.06 0m1.764 -2.944a4.75 4.75 0 0 1 7.731 3.477l0 .217m-11.195 -3.813a4.75 4.75 0 0 1 -1.828 -7.624l.164 -.172m6.718 0a4.75 4.75 0 0 1 -1.665 7.798" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <section  id="About">
-            <div class="heading">About</div>
+            <div class="heading">About me...</div>
             <div class="content">
                 <p>
                     Hi! I'm a CS undergraduate from India who loves problem solving, creating new things, & exploring technologies. 
-                    As of now, I'm exploring Web Development and really enjoying it.
+                    
+                </p>
+                <p>
+                    I'm interested in the domain of Web Development, Machine Learning, and Graph Theory. I'm also an amateur chess player who ends in traps far more often and trapping someone else.
                 </p>
                 <div>
                     <a href="./assets/resume.pdf"><button>Resume</button></a>
-                    <a href="#Contact"><button>Contact  </button></a>
+                    <a href="#Academics"><button>Academics  </button></a>
                 </div>
             </div>
         </section>
@@ -118,7 +197,7 @@
                             <path d="M7.5 8h3v8l-2 -1" />
                             <path d="M16.5 8h-2.5a0.5 .5 0 0 0 -.5 .5v3a0.5 .5 0 0 0 .5 .5h1.423a0.5 .5 0 0 1 .495 .57l-.418 2.93l-2 .5" />
                         </svg>
-                        <p>Javascript</p>
+                        <p>JS</p>
                     </div>
                     <div class="skill-button">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-git-pull-request" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#666" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -136,10 +215,91 @@
             </div></section>
         <section id="Projects">
             <div class="heading">Projects</div>
-            <div class="content"></div></section>
-        <section id="Contact">
-            <div class="heading">Contact</div>
-            <div class="content"></div></section>
+            <div class="content">
+                <div class="project">
+                    <h3>Library Manager</h3>
+                    <p>Library management webapp.</p>
+                    <ul class="tech">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Javascript</li>
+                    </ul>
+                    <a href="https://github.com/asdhamidi/library" target="_blank" rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#666" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+                        </svg>
+                    </a>  
+                </div>
+                <div class="project">
+                    <h3>Calculator</h3>
+                    <p>A web Calculator app.</p>
+                    <ul class="tech">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Javascript</li>
+                    </ul>
+                    <a href="https://github.com/asdhamidi/calcultor" target="_blank" rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#666" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+                        </svg>
+                    </a>  
+                </div>
+                <div class="project">
+                    <h3>Etech-a-Sketch</h3>
+                    <p>Etech-a-Sketch game.</p>
+                    <ul class="tech">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Javascript</li>
+                    </ul>
+                    <a href="https://github.com/asdhamidi/etch-a-sketch" target="_blank" rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#666" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+                        </svg>
+                    </a>  
+                </div>
+                <div class="project">
+                    <h3>Rock-Paper-Scissors</h3>
+                    <p>Classic game in web avatar.</p>
+                    <ul class="tech">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Javascript</li>
+                    </ul>
+                    <a href="https://github.com/asdhamidi/etch-a-sketch" target="_blank" rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#666" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+                        </svg>
+                    </a>  
+                </div>
+                <div class="project">
+                    <h3>6.0001</h3>
+                    <p>Solutions to 6.0001 by MITOCW.</p>
+                    <ul class="tech">
+                        <li>Python</li>
+                        <li>Statistic</li>
+                        <li>NumPy</li>
+                    </ul>
+                    <a href="https://github.com/asdhamidi/etch-a-sketch" target="_blank" rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#666" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+                        </svg>
+                    </a>  
+                </div>
+        </section>
+        <section id="Academics">
+            <div class="heading">Academics</div>
+            <div class="content">
+                <b style="margin: 0.5rem 0; font-size: 1.5rem;">B. Sc. (Hons.) Computer Science</b>
+                <small style="font-size: 1rem;">Graphic Era (Deemed to be University)</small>
+                <small style="margin: 0.5rem 0;">2020-23</small>
+            </div>
+        </section>
         <footer>
             Made with <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-heart" width="30" height="30" viewBox="0 0 24 24" stroke-width="1" stroke="#ff2825" fill="#f00" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>

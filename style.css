@@ -662,6 +662,14 @@ body.dark-theme .links-mobile li{
     body.dark-theme .front {
         background: radial-gradient(circle farthest-corner at top left, #222 20%, #111 30%, #000 50%);
     }
+    
+    body.dark-theme section:nth-child(even) {
+        background: linear-gradient(180deg, #000, #121212, #1A1A1A);
+    }
+    
+    body.dark-theme section:nth-child(odd) {
+        background: linear-gradient(180deg, #1A1A1A, #121212, #000);
+    }
 
     section {
         padding: 3rem 5%;

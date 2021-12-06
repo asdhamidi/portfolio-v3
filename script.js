@@ -66,7 +66,7 @@ window.onscroll = () => {
         {
             /** This will fade-in the sections and headings
              * as they scroll into view and fade-out them as they scroll out.**/
-            if(current + (window.innerHeight * 0.80) >= contents[i].offsetTop)
+            if(current + (window.innerHeight * 0.9) >= contents[i].offsetTop)
             {
                 contents[i].style.left = "0";
                 contents[i].style.opacity = "1";

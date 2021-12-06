@@ -1,3 +1,6 @@
+/* Background pictures from https://www.svgbackgrounds.com
+    HIGHLY RECOMMEDED */
+
 * {
     scroll-behavior: smooth;
     transform-origin: center;
@@ -119,6 +122,7 @@ body.dark-theme .links a:hover {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    z-index: 5;
     transition: all ease-in-out 300ms;
 }
 
@@ -143,11 +147,11 @@ body.dark-theme .theme-button img{
 }
 
 .theme-button img:hover {
-    border: 1px solid #0005;
+    border: 1px solid blueviolet;
 }
 
 body.dark-theme .theme-button img:hover {
-    border: 1px solid #99f;
+    border: 1px solid #ffec0070;
 }
 
 .theme-button img {
@@ -344,11 +348,10 @@ h1, h2, h3, h4, p,i, b{
 }
 
 #Projects .content {
-    gap: 0.5rem;
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(4, auto); 
-    gap: 10px;
+    gap: 1rem;
 }
 
 .content-box p {
@@ -384,10 +387,12 @@ body.dark-theme .skill-button {
 .skill-button:hover {
     transition: all 500ms ease-in-out;
     box-shadow: 0px 0px 10px #8a2be7;
+    color: black;
 }
 
 body.dark-theme .skill-button:hover {
     box-shadow: 0 0 10px #ffec0075;
+    color: white;
 }
 
 .social {
@@ -402,7 +407,7 @@ svg {
 
 svg:hover {
     transform: scale(1.1);
-    filter: invert(41%) sepia(94%) saturate(1636%) hue-rotate(129deg) brightness(92%) contrast(97%);
+    filter: invert(38%) sepia(98%) saturate(7478%) hue-rotate(269deg) brightness(93%) contrast(91%);
 }
 
 body.dark-theme svg:hover {
@@ -418,24 +423,31 @@ body.dark-theme svg:hover {
     height: 15rem;
     width: 15rem;
     font-size: large;
-    border: 2px solid #8a2be760;
-    border-radius: 10px;
+    border-top: 2px solid #8a2be760;
+    border-right: 2px solid #8a2be760;
+    border-radius: 0 10px;
     padding: 0.25rem;
-    background-color: #FFF;
+    background: linear-gradient(45deg, #FFF3, #FFF);
     text-align: center;
+    transition: all ease-in-out 300ms;
+    box-sizing: border-box;
 }
 
 body.dark-theme .project{
     background-color: #121212;
-    border: 2px solid #ffec0050;
+    border-color: #ffec0050;
+    background: linear-gradient(45deg, #0003, #000);
 }
 
 .project:hover {
-    border: 2px solid #8a2be7;
+    border-top: 2px solid #8a2be7;
+    border-right: 2px solid #8a2be7;
+    transform: scale3d(1.05, 1.05, 1.05);
 }
 
 body.dark-theme .project:hover {
-    border: 2px solid #ffec00;
+    border-top: 2px solid #ffec00;
+    border-right: 2px solid #ffec00;
 }
 
 .project p {
@@ -493,7 +505,6 @@ h1, h2, h3, span, p {
 .links-menu {
     background-color: white;
     z-index: 2;
-
 }
 
 .links-mobile {
@@ -510,6 +521,10 @@ h1, h2, h3, span, p {
     left: 0%;
 }
 
+body.dark-theme .links-mobile {
+    background-color: #121212;
+}
+
 .links-mobile li{
     margin: 1rem;
     padding: 0.25rem;
@@ -518,13 +533,17 @@ h1, h2, h3, span, p {
     border-bottom: 1px solid black;
 }
 
+body.dark-theme .links-mobile li{
+    border-color: white;
+}
+
 .hamb input
 {
   display: block;
   width: 40px;
   height: 32px;
   position: absolute;
-  top: 22px;
+  top: 25px;
   left: 14px;
   
   cursor: pointer;
@@ -545,6 +564,7 @@ h1, h2, h3, span, p {
     margin-right: 1rem;
     background: #cdcdcd;
     border-radius: 3px;
+    z-index: 1;
 }
 
 .menu-active {
@@ -577,7 +597,7 @@ h1, h2, h3, span, p {
     section .content {
         font-size: 1rem;
     }
-    
+
     .sidenav {
         display: none;
     }
@@ -610,7 +630,7 @@ h1, h2, h3, span, p {
     }
     
     .project {
-        width: auto;
+        width: 100%;
         height: auto;
     }
 }

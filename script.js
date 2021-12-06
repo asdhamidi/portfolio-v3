@@ -4,13 +4,15 @@ let title = document.querySelector(".title");
 let theme = document.getElementById("theme");
 let menu = document.querySelector(".links-mobile");
 let menuChk = document.getElementById("menu-check");
+let nav = document.querySelector("nav");
+let contents = document.querySelectorAll(".content");
+let headings = document.querySelectorAll(".heading");
 
-
-// Sidenav functionality.
+// Fade-in on scroll functionality.
 window.onscroll = () => {
+    let current = window.scrollY;
     if(window.innerWidth > 666)
     {
-        let current = window.scrollY;
         let id = "";
 
         // Displaying sidenav and title as we pass the front page.
@@ -53,9 +55,38 @@ window.onscroll = () => {
         document.querySelector(".sidenav").classList.remove("sidenav-active");
         title.classList.remove("title-scroll");
         theme.classList.remove("theme-scroll");
+
+        if(window.scrollY < 300)
+        nav.classList.remove("mobile-nav")
+        else
+        nav.classList.add("mobile-nav")
     }
 
+    for(let i = 0; i < contents.length; i++)
+        {
+            /** This will fade-in the sections and headings
+             * as they scroll into view and fade-out them as they scroll out.**/
+            if(current + 600 >= contents[i].offsetTop)
+            {
+                contents[i].style.left = "0";
+                contents[i].style.opacity = "1";
+                headings[i].style.right = "0";
+                headings[i].style.opacity = "1";
+            }
+            else
+            {
+                contents[i].style.left = "3vw";
+                contents[i].style.opacity = "0";
+                headings[i].style.right = "3vw";
+                headings[i].style.opacity = "0";
+            }
+        }
 };
+
+// Fade-in for nav-bar
+nav.style.opacity = "1";
+nav.style.top = "0";
+
 
 // Theme changing function.
 function changeTheme(e)

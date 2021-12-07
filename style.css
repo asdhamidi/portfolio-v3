@@ -4,7 +4,6 @@
 * {
     scroll-behavior: smooth;
     transform-origin: center;
-    transition: all ease-in-out 50ms;
 }
 
 :root {
@@ -389,7 +388,7 @@ h1, h2, h3, h4, p,i, b{
 body.dark-theme .skill-button {
     box-shadow: 0 0 8px #fff3;
     background-color: #121212;
-    border: 1px solid #ff09;
+    border: 0.5px solid #ff07;
 }
 
 .skill-button svg {
@@ -526,7 +525,7 @@ h1, h2, h3, span, p {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background-color: white;
+    backdrop-filter: blur(15px);
     position: absolute;
     opacity: 0;
     height: 100vh;
@@ -536,16 +535,16 @@ h1, h2, h3, span, p {
     transition: all ease-in-out 300ms;
 }
 
-body.dark-theme .links-mobile {
-    background-color: #121212;
-}
-
 .links-mobile li{
     margin: 1rem;
     padding: 0.25rem;
     width: 80%;
     text-align: left;
     border-bottom: 1px solid black;
+}
+
+.links-mobile li a{
+    padding-right: 100%;
 }
 
 body.dark-theme .links-mobile li{
@@ -686,12 +685,13 @@ body.dark-theme .links-mobile li{
     }
     
     #Projects .content {
-        grid-template-columns: repeat(1, auto);
-        grid-template-rows: repeat(4, auto); 
+        display: flex;
+        width: 100%;
+        align-items: center;
     }
     
     .project {
-        width: 100%;
+        width: 90%;
         height: auto;
     }
 }
@@ -724,12 +724,14 @@ body.dark-theme .links-mobile li{
 
     .content-box {
         grid-template-columns: repeat(2, auto);
-        grid-template-rows: repeat(4, 3rem); 
+        grid-template-rows: repeat(4, 3rem);
+        gap: 0.5rem;
     }
 
     .skill-button {
         padding: 0.1rem;
         width: 40vw;
+        margin: 0%;
     }
 
     .heading {

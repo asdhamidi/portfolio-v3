@@ -7,6 +7,7 @@ let menuChk = document.getElementById("menu-check");
 let nav = document.querySelector("nav");
 let contents = document.querySelectorAll(".content");
 let headings = document.querySelectorAll(".heading");
+let root = document.querySelector(":root");
 
 // Fade-in on scroll functionality.
 window.onscroll = () => {
@@ -60,9 +61,27 @@ window.onscroll = () => {
         nav.classList.remove("mobile-nav")
         else
         nav.classList.add("mobile-nav")
-    }
 
-    for(let i = 0; i < contents.length; i++)
+        let projects = document.querySelectorAll(".project");
+
+        for(let i = 0; i < projects.length; i++)
+        {
+            /** This will fade-in the projects
+             * as they scroll into view and fade-out them as they scroll out.**/
+            if(current + (window.innerHeight * 0.75) >= projects[i].offsetTop + contents[2].offsetTop )
+            {
+                projects[i].style.right = "0";
+                projects[i].style.opacity = "1";
+            }
+            else
+            {
+                projects[i].style.right = "5vw";
+                projects[i].style.opacity = "0";
+            }
+        }
+    }
+        
+        for(let i = 0; i < contents.length; i++)
         {
             /** This will fade-in the sections and headings
              * as they scroll into view and fade-out them as they scroll out.**/
@@ -109,4 +128,10 @@ function openMenu()
     else
     menuChk.checked = true;
 
+}
+
+// Heart color function
+function heart(e)
+{
+    root.style.setProperty("--heart", `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`);
 }

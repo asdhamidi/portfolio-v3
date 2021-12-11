@@ -7,6 +7,7 @@ let menuChk = document.getElementById("menu-check");
 let nav = document.querySelector("nav");
 let contents = document.querySelectorAll(".content");
 let headings = document.querySelectorAll(".heading");
+let hamb = document.querySelector(".hamb");
 let root = document.querySelector(":root");
 
 // Fade-in on scroll functionality.
@@ -122,7 +123,8 @@ function changeTheme(e)
 function openMenu()
 {
     menu.classList.toggle("menu-active");
-
+    hamb.classList.toggle("active");
+    
     if(menuChk.checked)
     menuChk.checked = false;
     else

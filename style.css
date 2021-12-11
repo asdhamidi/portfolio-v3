@@ -3,7 +3,6 @@
 
 * {
     scroll-behavior: smooth;
-    transform-origin: center;
 }
 
 :root {
@@ -150,15 +149,15 @@ body.dark-theme .links a:hover {
 }
 
 body.dark-theme .theme-button img{
-    background-color: #666;
+    background-color: #999;
 }
 
 .theme-button img:hover {
-    border: 1px solid blueviolet;
+    box-shadow: 0 0 5px #8a2be7;
 }
 
 body.dark-theme .theme-button img:hover {
-    border: 1px solid #ffec0070;
+    box-shadow: 0 0 5px #ffec00;
 }
 
 .theme-button img {
@@ -386,9 +385,9 @@ h1, h2, h3, h4, p,i, b{
 }
 
 body.dark-theme .skill-button {
-    box-shadow: 0 0 8px #fff3;
+    box-shadow: 0 0 5px #fff3;
     background-color: #121212;
-    border: 0.5px solid #ff07;
+    border: 1px solid #ff05;
 }
 
 .skill-button svg {
@@ -403,7 +402,7 @@ body.dark-theme .skill-button {
 }
 
 body.dark-theme .skill-button:hover {
-    box-shadow: 0 0 10px #ffec0090;
+    box-shadow: 0 0 10px #ffec0050;
     color: white;
 }
 
@@ -417,12 +416,12 @@ svg {
     transition: transform .15s cubic-bezier(.17,.67,.29,2.71) 0s;
 }
 
-svg:hover {
+svg:hover, .skill-button:hover svg {
     transform: scale(1.1);
     filter: invert(38%) sepia(98%) saturate(7478%) hue-rotate(269deg) brightness(93%) contrast(91%);
 }
 
-body.dark-theme svg:hover {
+body.dark-theme svg:hover, body.dark-theme .skill-button:hover svg {
     filter: invert(89%) sepia(67%) saturate(1730%) hue-rotate(359deg) brightness(109%) contrast(102%);   
 }
 
@@ -532,7 +531,9 @@ h1, h2, h3, span, p {
     width: 100vw;
     top: 0;
     left: -100vw;
-    transition: all ease-in-out 300ms;
+    font-weight: 300;
+    font-size: 1.5rem;
+    transition: all ease-in-out 500ms;
 }
 
 .links-mobile li{
@@ -560,8 +561,6 @@ body.dark-theme .links-mobile li{
   top: 25px;
   left: 14px;
   
-  cursor: pointer;
-  
   opacity: 0; /* hide this */
   z-index: 2; /* and place it over the hamburger */
   
@@ -576,11 +575,31 @@ body.dark-theme .links-mobile li{
     margin-bottom: 5px;
     position: relative;
     margin-right: 1rem;
-    background: #cdcdcd;
+    background: #999;
     border-radius: 3px;
     z-index: 1;
+    transition: all ease-in-out 500ms;
 }
 
+
+.hamb.active span:nth-child(3) {
+    opacity: 0;
+    transform: scale(.5);
+}
+
+.hamb.active span:nth-child(2) {
+    transform: translateY(14px) rotate(45deg);
+    background-color: #8a2be7;
+}
+
+.hamb.active span:nth-child(4) {
+    transform: translateY(-14px) rotate(-45deg);
+    background-color: #8a2be7;
+}
+
+body.dark-theme .hamb.active span {
+    background-color: #ffec00;
+}
 .menu-active {
     left: 0;
     opacity: 1;
@@ -743,7 +762,7 @@ body.dark-theme .links-mobile li{
     }
 
     nav {
-        align-items: flex-start;
+        align-items: center;
         justify-content: left;
         position: fixed;
         top: 0%;
@@ -769,7 +788,7 @@ body.dark-theme .links-mobile li{
         display: block;
     }
 
-    .hamb span {
-        background: #999;
+    #menu-check:checked ~ .hamb span {
+        background-color: blue;
     }
 }

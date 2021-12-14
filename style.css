@@ -198,11 +198,13 @@ body.dark-theme .theme-button img:hover {
     transition: all 300ms ease-in-out;
     border: none;
     font-size: 1rem;
+    opacity: 0.67;
     background-color: transparent;
     color: #666;
 }
 
 .active, .sidenav a:hover, .link:hover {
+    opacity: 1;
     color: blueviolet;
 }
 
@@ -212,6 +214,7 @@ body.dark-theme .active, body.dark-theme .sidenav a:hover, body.dark-theme .link
 
 .active {
     font-size: 1.25rem;
+    opacity: 1;
 }
 
 a {
@@ -262,6 +265,9 @@ body.dark-theme section:nth-child(odd) {
     background: url("./assets/front.svg") no-repeat;
     background-position: top;
     background-size: cover;
+    position: relative;
+    opacity: 0;
+    transition: all ease-in-out 750ms;
 }
 
 body.dark-theme .front {

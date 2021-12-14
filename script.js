@@ -1,5 +1,6 @@
 let btn = document.querySelectorAll(".link");
 let sections = document.querySelectorAll("section");
+let front = document.querySelectorAll(".front");
 let title = document.querySelector(".title");
 let theme = document.getElementById("theme");
 let menu = document.querySelector(".links-mobile");
@@ -23,6 +24,7 @@ window.onscroll = () => {
             document.querySelector(".sidenav").classList.add("sidenav-active");
             title.classList.add("title-scroll");
             theme.classList.add("theme-scroll");
+            
         }
         else
         {
@@ -103,9 +105,10 @@ window.onscroll = () => {
         }
 };
 
-// Fade-in for nav-bar
+// Fade-in for nav-bar & front page
 nav.style.opacity = "1";
 nav.style.top = "0";
+front[0].style.opacity = "1";
 
 
 // Theme changing function.

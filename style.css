@@ -232,6 +232,7 @@ section {
     width: 60%;
     padding: 0 20%;
     height: 100vh;
+    transition: all ease-in-out 750ms;
 }
 
 section:nth-child(even) {
@@ -557,7 +558,9 @@ h1, h2, h3, span, p {
 body.dark-theme .links-mobile li{
     border-color: white;
 }
-
+.hamb {
+    transition: all ease-in-out 300ms;
+}
 .hamb input
 {
   display: block;
@@ -579,30 +582,39 @@ body.dark-theme .links-mobile li{
     width: 33px;
     height: 4px;
     margin-bottom: 5px;
-    position: relative;
     margin-right: 1rem;
     background: #999;
     border-radius: 3px;
     z-index: 1;
-    transition: all ease-in-out 500ms;
+    transition: all ease-in-out 800ms;
 }
 
+.hamb span:nth-child(2), .hamb span:nth-child(4){
+    transform-origin: center;
+}
 
 .hamb.active span:nth-child(3) {
     opacity: 0;
-    transform: scale(.5);
+    transform: scale(.1);
 }
 
 .hamb.active span:nth-child(2) {
-    transform: translateY(14px) rotate(45deg);
+    transform: translateY(14px) rotate(90deg);
     background-color: #8a2be7;
 }
 
 .hamb.active span:nth-child(4) {
-    transform: translateY(-14px) rotate(-45deg);
+    transform: translateY(-14px);
     background-color: #8a2be7;
 }
 
+.hamb.active {
+    transform: rotate(45deg);
+}
+
+.hamb.active input {
+    transform: scale(2);
+}
 body.dark-theme .hamb.active span {
     background-color: #ffec00;
 }
@@ -661,9 +673,10 @@ body.dark-theme .hamb.active span {
         grid-template-columns: repeat(2, auto);
         gap: 20px;
     }
-
+    
     .content-box {
-        grid-template-rows: repeat(4, 3rem); 
+        grid-template-columns: repeat(3, 50%);
+        grid-template-rows: repeat(4, 4rem); 
     }
 }
 
@@ -684,6 +697,10 @@ body.dark-theme .hamb.active span {
     }
 
     .sidenav {
+        left: 0.05rem;
+    }
+
+    .sidenav a {
         display: none;
     }
     
@@ -696,16 +713,21 @@ body.dark-theme .hamb.active span {
     }
  
     .content-box {
-        grid-template-columns: repeat(3, auto);
-        grid-template-rows: repeat(4, auto); 
-        gap: 15px;
+        grid-template-columns: repeat(3, 10rem);
+        grid-template-rows: repeat(4, 4rem); 
+        gap: 10px;
+    }
+
+    .sidenav span {
+        margin: 0;
+        font-size: 1.25rem;
     }
 }
 
 @media screen and (max-width: 740px) {
     .content-box {
-        grid-template-columns: repeat(2, auto);
-        grid-template-rows: repeat(4, auto); 
+        grid-template-columns: repeat(2, 10rem);
+        grid-template-rows: repeat(4, 4rem); 
 
     }
     

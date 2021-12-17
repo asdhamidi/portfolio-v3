@@ -266,7 +266,6 @@ body.dark-theme section:nth-child(odd) {
     background: url("./assets/front.svg") no-repeat;
     background-position: top;
     background-size: cover;
-    position: relative;
     opacity: 0;
     transition: all ease-in-out 750ms;
 }
@@ -276,6 +275,32 @@ body.dark-theme .front {
     background-position: top;
     background-size: cover;
 }
+
+.social ul li {
+    opacity: 0;
+    position: relative;
+    bottom: -1rem;
+}
+
+.social ul li:nth-child(1) {
+    transition: all ease-in-out 850ms;
+}
+.social ul li:nth-child(2) {
+    transition: all ease-in-out 950ms;
+}
+.social ul li:nth-child(3) {
+    transition: all ease-in-out 1150ms;
+}
+.social ul li:nth-child(4) {
+    transition: all ease-in-out 1250ms;
+}
+.social ul li:nth-child(5) {
+    transition: all ease-in-out 1350ms;
+}
+.social ul li:nth-child(6) {
+    transition: all ease-in-out 1450ms;
+}
+
 .heading {
     margin: 0.5rem 0;
     font-size: 3rem;
@@ -537,7 +562,7 @@ h1, h2, h3, span, p {
     height: 100vh;
     width: 100vw;
     top: 0;
-    left: -100vw;
+    left: -150vw;
     font-weight: 300;
     font-size: 1.5rem;
     transition: all ease-in-out 500ms;
@@ -704,6 +729,11 @@ body.dark-theme .hamb.active span {
         display: none;
     }
     
+    .sidenav a:hover, .link:hover {
+        opacity: 1;
+        color: #666;
+    }
+
     .theme-scroll {
         display: none;
     }

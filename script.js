@@ -5,6 +5,7 @@ let title = document.querySelector(".title");
 let theme = document.getElementById("theme");
 let menu = document.querySelector(".links-mobile");
 let menuChk = document.getElementById("menu-check");
+let socials = document.querySelectorAll(".social ul li");
 let nav = document.querySelector("nav");
 let contents = document.querySelectorAll(".content");
 let headings = document.querySelectorAll(".heading");
@@ -22,7 +23,7 @@ window.onscroll = () => {
         /** This will end up with the last section 
          * which is within the limit (current + 300) 
             after looping through all the sections.**/
-        if(current + 300 >= sections[i].offsetTop)
+        if(current + (window.innerHeight * 0.75) >= sections[i].offsetTop)
             id = i;
     }
 
@@ -109,11 +110,14 @@ window.onscroll = () => {
         }
 };
 
-// Fade-in for nav-bar & front page
+// Fade-in for nav-bar, front page & front-page socials.
 nav.style.opacity = "1";
 nav.style.top = "0";
 front[0].style.opacity = "1";
-
+socials.forEach((social) => {
+    social.style.opacity = "1";
+    social.style.bottom = "0";
+});
 
 // Theme changing function.
 function changeTheme(e)
@@ -131,6 +135,7 @@ function openMenu()
 {
     menu.classList.toggle("menu-active");
     hamb.classList.toggle("active");
+    document.querySelector(".sidenav").classList.toggle("sidenav-active");
     
     if(menuChk.checked)
     menuChk.checked = false;

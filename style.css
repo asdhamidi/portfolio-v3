@@ -7,6 +7,8 @@
 
 :root {
     --heart: rgb(255, 0, 0);
+    --day-main: rgb(138,43,226);
+    --night-main: rgb(255,236,0);
 }
 
 body{
@@ -31,10 +33,6 @@ nav {
     width: 60%;
     margin-left: 20%;
     z-index: 5;
-    position: relative;
-    top: -25px;
-    opacity: 0;
-    transition: all ease-in-out 750ms;
 }
 
 .nav-1 {
@@ -53,7 +51,7 @@ nav {
 }
 
 body.dark-theme .title:hover {
-    color: #ffec00;
+    color: var(--night-main);
 }
 
 .title-scroll {
@@ -80,18 +78,36 @@ ul {
     transition: all ease-in-out 200ms;
 }
 
+.links li {
+    position: relative;
+    top: -25px;
+    opacity: 0;
+}
+
+.links li:nth-child(1) {
+    transition: all ease-in-out 450ms;
+}
+.links li:nth-child(2) {
+    transition: all ease-in-out 500ms;
+}
+.links li:nth-child(3) {
+    transition: all ease-in-out 550ms;
+}
+.links li:nth-child(4) {
+    transition: all ease-in-out 600ms;
+}
+
 .links a {
     display: inline-block;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    position: relative;
     overflow: hidden;
 }
 
 body.dark-theme .links a:before {
-    background-color: #ffec00;
+    background-color: var(--night-main);
 }
 
 .links a:before {
@@ -103,6 +119,7 @@ body.dark-theme .links a:before {
     bottom: 0;
     background: blueviolet;
     height: 2px;
+    border-radius:50%;
     -webkit-transition-property: left, right;
     transition-property: left, right;
     -webkit-transition-duration: 0.3s;
@@ -112,11 +129,11 @@ body.dark-theme .links a:before {
 }
 
 .links a:hover {
-    color: blueviolet;
+    color: var(--day-main);
 }
 
 body.dark-theme .links a:hover {
-    color: #ffec00;
+    color: var(--night-main);
 }
 
 .links a:hover:before, .links a:focus:before, .links a:active:before {
@@ -153,11 +170,11 @@ body.dark-theme .theme-button img{
 }
 
 .theme-button img:hover {
-    box-shadow: 0 0 5px #8a2be7;
+    box-shadow: 0 0 5px var(--day-main);
 }
 
 body.dark-theme .theme-button img:hover {
-    box-shadow: 0 0 5px #ffec00;
+    box-shadow: 0 0 5px var(--night-main);
 }
 
 .theme-button img {
@@ -174,7 +191,7 @@ body.dark-theme .theme-button img:hover {
     opacity: 0;
     left: 0.5rem;
     font-weight: bold;
-    transition: all ease-in 500ms;
+    transition: all ease-in 200ms;
     z-index: 5;
 }
 
@@ -209,7 +226,7 @@ body.dark-theme .theme-button img:hover {
 }
 
 body.dark-theme .active, body.dark-theme .sidenav a:hover, body.dark-theme .link:hover {
-    color: #ffec00;
+    color: var(--night-main);
 }
 
 .active {
@@ -232,7 +249,6 @@ section {
     width: 60%;
     padding: 0 20%;
     height: 100vh;
-    transition: all ease-in-out 750ms;
 }
 
 section:nth-child(even) {
@@ -267,7 +283,6 @@ body.dark-theme section:nth-child(odd) {
     background-position: top;
     background-size: cover;
     opacity: 0;
-    transition: all ease-in-out 750ms;
 }
 
 body.dark-theme .front {
@@ -301,13 +316,72 @@ body.dark-theme .front {
     transition: all ease-in-out 1450ms;
 }
 
+.social ul svg {
+    max-width: 100%;
+}
+
+.social-scroll {
+    right: 20px;
+    width: 40px;
+    position: fixed;
+    bottom: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-scroll::after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 4rem;
+    margin: 0px auto;
+    background-color: gray;
+    transition: all ease-in-out 300ms;
+}
+
+.social:hover > .social-scroll::after{
+    background-color: var(--day-main);
+    height: 4.5rem;
+}
+
+body.dark-theme .social:hover > .social-scroll::after{
+    background-color: var(--night-main);
+}
+
+
 .heading {
     margin: 0.5rem 0;
     font-size: 3rem;
     color: black;
     font-weight: bolder;
     position: relative;
-    transition: all ease-in-out 500ms;
+    transition: all ease-in-out 400ms;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+}
+
+.heading::after {
+    content: "";
+    display: block;
+    align-self: center;
+    justify-self: center;
+    width: 50px;
+    flex-grow:  1;
+    height: 1px;
+    background-color: gray;
+    transition: all ease-in-out 300ms;
+}
+
+section:hover > .heading::after {
+    background-color: blueviolet;
+}
+
+body.dark-theme section:hover > .heading::after {
+    background-color: #ffec0075;
 }
 
 body.dark-theme .heading {
@@ -322,7 +396,7 @@ body.dark-theme .heading {
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    transition: all ease-in-out 500ms;
+    transition: all ease-in-out 400ms;
 }
 
 main {
@@ -367,8 +441,8 @@ body.dark-theme .content button {
 }
 
 body.dark-theme .content button:hover {
-    border: 1px solid #ffec00;
-    background-color: #ffec00;
+    border: 1px solid var(--night-main);
+    background-color: var(--night-main);
     color: black;
 }
 
@@ -413,7 +487,7 @@ h1, h2, h3, h4, p,i, b{
     box-shadow: 0px 0px 10px #CCC;
     background-color: #FFF;
     border-radius: 0.25rem;
-    border: 1px solid #8a2be780;
+    border: 1px solid #8a2be280;
 }
 
 body.dark-theme .skill-button {
@@ -429,12 +503,12 @@ body.dark-theme .skill-button {
 
 .skill-button:hover {
     transition: all 500ms ease-in-out;
-    box-shadow: 0px 0px 10px #8a2be7;
+    box-shadow: 0px 0px 10px var(--day-main);
     color: black;
 }
 
 body.dark-theme .skill-button:hover {
-    box-shadow: 0 0 10px #ffec0050;
+    box-shadow: 0 0 10px var(--night-main)50;
     color: white;
 }
 
@@ -463,18 +537,17 @@ body.dark-theme svg:hover, body.dark-theme .skill-button:hover svg {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    position: relative;
     height: 15rem;
     width: 15rem;
     font-size: large;
-    border-top: 2px solid #8a2be760;
-    border-right: 2px solid #8a2be760;
+    border-top: 2px solid #8a2be260;
+    border-right: 2px solid #8a2be260;
     border-radius: 0 10px;
     padding: 0.25rem;
     background: linear-gradient(45deg, #FFF3, #FFF);
     text-align: center;
     box-sizing: border-box;
-    transition: all ease-in 300ms;
+    transition: all ease-in 200ms;
 }
 
 body.dark-theme .project{
@@ -484,14 +557,14 @@ body.dark-theme .project{
 }
 
 .project:hover {
-    border-top: 2px solid #8a2be7;
-    border-right: 2px solid #8a2be7;
-    transform: scale3d(1.05, 1.05, 1.05);
+    border-top: 2px solid var(--day-main);
+    border-right: 2px solid var(--day-main);
+    transform: translateY(-0.25rem);
 }
 
 body.dark-theme .project:hover {
-    border-top: 2px solid #ffec00;
-    border-right: 2px solid #ffec00;
+    border-top: 2px solid var(--night-main);
+    border-right: 2px solid var(--night-main);
 }
 
 .project p {
@@ -604,7 +677,6 @@ body.dark-theme .links-mobile li{
 .hamb span
 {
     display: block;
-    width: 33px;
     height: 4px;
     margin-bottom: 5px;
     margin-right: 1rem;
@@ -612,6 +684,21 @@ body.dark-theme .links-mobile li{
     border-radius: 3px;
     z-index: 1;
     transition: all ease-in-out 800ms;
+}
+
+.hamb span:nth-child(2)
+{
+    width: 33px;
+}
+
+.hamb span:nth-child(3)
+{
+    width: 25px;
+}
+
+.hamb span:nth-child(4)
+{
+    width: 17px;
 }
 
 .hamb span:nth-child(2), .hamb span:nth-child(4){
@@ -625,12 +712,13 @@ body.dark-theme .links-mobile li{
 
 .hamb.active span:nth-child(2) {
     transform: translateY(14px) rotate(90deg);
-    background-color: #8a2be7;
+    background-color: var(--day-main);
 }
 
 .hamb.active span:nth-child(4) {
     transform: translateY(-14px);
-    background-color: #8a2be7;
+    background-color: var(--day-main);
+    width: 33px;
 }
 
 .hamb.active {
@@ -641,7 +729,7 @@ body.dark-theme .links-mobile li{
     transform: scale(2);
 }
 body.dark-theme .hamb.active span {
-    background-color: #ffec00;
+    background-color: var(--night-main);
 }
 .menu-active {
     left: 0;
@@ -722,7 +810,7 @@ body.dark-theme .hamb.active span {
     }
 
     .sidenav {
-        left: 0.05rem;
+        left: 95vw;
     }
 
     .sidenav a {
@@ -848,5 +936,19 @@ body.dark-theme .hamb.active span {
 
     #menu-check:checked ~ .hamb span {
         background-color: blue;
+    }
+
+    .heading::after {
+        display: none;
+    }
+    
+    .social-scroll {
+        position: static;
+        flex-direction: row;
+        width: auto;
+    }
+
+    .social-scroll::after {
+        display: none;
     }
 }

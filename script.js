@@ -6,6 +6,8 @@ let theme = document.getElementById("theme");
 let menu = document.querySelector(".links-mobile");
 let menuChk = document.getElementById("menu-check");
 let socials = document.querySelectorAll(".social ul li");
+let social = document.querySelector(".social ul");
+let links = document.querySelectorAll(".links li");
 let nav = document.querySelector("nav");
 let contents = document.querySelectorAll(".content");
 let headings = document.querySelectorAll(".heading");
@@ -50,13 +52,16 @@ window.onscroll = () => {
             document.querySelector(".sidenav").classList.add("sidenav-active");
             title.classList.add("title-scroll");
             theme.classList.add("theme-scroll");
-            
+            if(current > 500)
+            social.classList.add("social-scroll")
         }
         else
         {
             document.querySelector(".sidenav").classList.remove("sidenav-active");
             title.classList.remove("title-scroll");
             theme.classList.remove("theme-scroll");
+            if(current < 500)
+            social.classList.remove("social-scroll")
         } 
     }
     else
@@ -95,14 +100,14 @@ window.onscroll = () => {
              * as they scroll into view and fade-out them as they scroll out.**/
             if(current + (window.innerHeight * 0.9) >= contents[i].offsetTop)
             {
-                contents[i].style.left = "0";
+                contents[i].style.top = "0";
                 contents[i].style.opacity = "1";
                 headings[i].style.right = "0";
                 headings[i].style.opacity = "1";
             }
             else
             {
-                contents[i].style.left = "3vw";
+                contents[i].style.top = "3vw";
                 contents[i].style.opacity = "0";
                 headings[i].style.right = "3vw";
                 headings[i].style.opacity = "0";
@@ -111,12 +116,14 @@ window.onscroll = () => {
 };
 
 // Fade-in for nav-bar, front page & front-page socials.
-nav.style.opacity = "1";
-nav.style.top = "0";
 front[0].style.opacity = "1";
 socials.forEach((social) => {
     social.style.opacity = "1";
     social.style.bottom = "0";
+});
+links.forEach((social) => {
+    social.style.opacity = "1";
+    social.style.top = "0";
 });
 
 // Theme changing function.

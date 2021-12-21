@@ -629,16 +629,42 @@ h1, h2, h3, span, p {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    backdrop-filter: blur(15px);
+    background-color: #EEE;
     position: absolute;
     opacity: 0;
     height: 100vh;
-    width: 100vw;
+    width: 60vw;
     top: 0;
     left: -150vw;
     font-weight: 300;
     font-size: 1.5rem;
     transition: all ease-in-out 500ms;
+    box-shadow: 1px 0px 10px gray;
+}
+
+body.dark-theme .links-mobile{
+    background-color: #121212;
+    box-shadow: 1px 0px 10px black;
+}
+
+.blur-wrapper {
+    position: fixed;
+    backdrop-filter: blur(5px);
+    height: 110vh;
+    width: 40vw;
+    top: 0;
+    right: -150vw;
+    transition: all ease-in-out 500ms;
+    z-index: 6;
+}
+
+.blur-active {
+    right: 0vw;
+}
+
+.links-mobile-main {
+    transition: all ease-in-out 500ms;
+    opacity: 0.33;
 }
 
 .links-mobile li{
@@ -647,17 +673,20 @@ h1, h2, h3, span, p {
     width: 80%;
     text-align: left;
     border-bottom: 1px solid black;
+    display: flex;
 }
 
 .links-mobile li a{
-    padding-right: 100%;
+    flex: 1;
 }
 
 body.dark-theme .links-mobile li{
     border-color: white;
 }
+
 .hamb {
     transition: all ease-in-out 300ms;
+    margin-right: 1rem;
 }
 .hamb input
 {
@@ -678,10 +707,8 @@ body.dark-theme .links-mobile li{
 {
     display: block;
     height: 4px;
-    margin-bottom: 5px;
-    margin-right: 1rem;
     background: #999;
-    border-radius: 3px;
+    border-radius: 10px;
     z-index: 1;
     transition: all ease-in-out 800ms;
 }

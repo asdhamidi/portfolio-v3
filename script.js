@@ -12,6 +12,7 @@ let nav = document.querySelector("nav");
 let contents = document.querySelectorAll(".content");
 let headings = document.querySelectorAll(".heading");
 let hamb = document.querySelector(".hamb");
+let blur = document.querySelector(".blur-wrapper");
 let root = document.querySelector(":root");
 
 // Fade-in on scroll functionality.
@@ -142,6 +143,7 @@ function openMenu()
 {
     menu.classList.toggle("menu-active");
     hamb.classList.toggle("active");
+    blur.classList.toggle("blur-active");
     document.querySelector(".sidenav").classList.toggle("sidenav-active");
     
     if(menuChk.checked)

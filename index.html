@@ -12,55 +12,70 @@
     <title>Asadullah Hamidi - Portfolio</title>
 </head>
 <body>
-    <nav>
-        <div class="title"><a href="#front">AH.</a></div>
-        <div class="nav-1">
-            <ul class="links">
-                <li><a href="#About">About</a></li>
-                <li><a href="#Skills">Skills</a></li>
-                <li><a href="#Projects">Projects</a></li>
-                <li><a href="#Academics">Academics</a></li>
-            </ul>
-        </div>
-        <div class="hamb">
-            <input type="checkbox" id="menu-check" onclick="openMenu()"/>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="links-menu">
-            <ul class="links-mobile" onclick="openMenu()">
-                <li><a href="#About">About</a></li>
-                <li><a href="#Skills">Skills</a></li>
-                <li><a href="#Projects">Projects</a></li>
-                <li><a href="#Academics">Academics</a></li>
-            </ul>
-        </div>
-        <div class="theme-button">
-            <img src="./assets/day.svg" onclick="changeTheme()" id="theme">
-        </div>
-    </nav>
-
     <div class="sidenav">
         <button class="link" id="1">
-            <span>•</span>
-            <a href="#About">About</a>
+            <a href="#About">
+                <span>•</span>
+                <small>
+                    About
+                </small>
+            </a>
         </button>
         <button class="link" id="2">
-            <span>•</span>
-            <a href="#Skills">Skills</a>
+            <a href="#Skills">
+                <span>•</span>
+                <small>
+                    Skills
+                </small>
+            </a>
         </button>
         <button class="link" id="3">
-            <span>•</span>
-            <a href="#Projects">Projects</a>
+            <a href="#Projects">
+                <span>•</span>
+                <small>
+                    Projects
+                </small>
+            </a>
         </button>
         <button class="link" id="4">
-            <span>•</span>
-            <a href="#Academics">Academics</a>
+            <a href="#Academics">
+                <span>•</span>
+                <small>
+                    Academics
+                </small>
+            </a>
         </button>
     </div>
-
+    
     <main>
+        <nav>
+            <div class="title"><a href="#front">AH.</a></div>
+            <div class="nav-1">
+                <ul class="links">
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Skills">Skills</a></li>
+                    <li><a href="#Projects">Projects</a></li>
+                    <li><a href="#Academics">Academics</a></li>
+                </ul>
+            </div>
+            <div class="hamb">
+                <input type="checkbox" id="menu-check" onclick="openMenu()"/>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="links-menu">
+                <ul class="links-mobile" onclick="openMenu()">
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Skills">Skills</a></li>
+                    <li><a href="#Projects">Projects</a></li>
+                    <li><a href="#Academics">Academics</a></li>
+                </ul>
+            </div>
+            <div class="theme-button">
+                <img src="./assets/day.svg" onclick="changeTheme()" id="theme">
+            </div>
+        </nav>
         <div class="front" id="front">
             <div>
                 <span style="font-size: 1.1rem;">Hey there!</span>

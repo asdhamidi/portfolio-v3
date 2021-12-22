@@ -1,4 +1,4 @@
-let btn = document.querySelectorAll(".link");
+let btn = document.querySelectorAll(".sidenav button");
 let sections = document.querySelectorAll("section");
 let front = document.querySelectorAll(".front");
 let title = document.querySelector(".title");
@@ -14,10 +14,11 @@ let headings = document.querySelectorAll(".heading");
 let hamb = document.querySelector(".hamb");
 let blur = document.querySelector(".blur-wrapper");
 let root = document.querySelector(":root");
+let main = document.querySelector("main");
 
 // Fade-in on scroll functionality.
-window.onscroll = () => {
-    let current = window.scrollY;
+main.onscroll = () => {
+    let current = main.scrollTop;
     let id = "";
 
     // Looping through the sections list.
@@ -71,7 +72,7 @@ window.onscroll = () => {
         title.classList.remove("title-scroll");
         theme.classList.remove("theme-scroll");
 
-        if(window.scrollY < 300)
+        if(main.scrollTop < 300)
         nav.classList.remove("mobile-nav")
         else
         nav.classList.add("mobile-nav")

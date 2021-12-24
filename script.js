@@ -54,6 +54,7 @@ main.onscroll = () => {
             document.querySelector(".sidenav").classList.add("sidenav-active");
             title.classList.add("title-scroll");
             theme.classList.add("theme-scroll");
+            social.classList.add("social-hide")
             if(current > 500)
             social.classList.add("social-scroll")
         }
@@ -62,6 +63,7 @@ main.onscroll = () => {
             document.querySelector(".sidenav").classList.remove("sidenav-active");
             title.classList.remove("title-scroll");
             theme.classList.remove("theme-scroll");
+            social.classList.remove("social-hide")
             if(current < 500)
             social.classList.remove("social-scroll")
         } 
@@ -127,6 +129,13 @@ links.forEach((social) => {
     social.style.opacity = "1";
     social.style.top = "0";
 });
+
+document.getElementById("front1").style.opacity = "1";
+document.getElementById("front1").style.top = "0";
+document.getElementById("front2").style.opacity = "1";
+document.getElementById("front2").style.top = "0";
+document.getElementById("front3").style.opacity = "0.5";
+document.getElementById("front3").style.top = "0";
 
 // Theme changing function.
 function changeTheme(e)

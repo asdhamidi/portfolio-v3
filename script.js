@@ -87,12 +87,12 @@ main.onscroll = () => {
              * as they scroll into view and fade-out them as they scroll out.**/
             if(current + (window.innerHeight * 0.75) >= projects[i].offsetTop + contents[2].offsetTop )
             {
-                projects[i].style.right = "0";
+                projects[i].style.bottom = "0";
                 projects[i].style.opacity = "1";
             }
             else
             {
-                projects[i].style.right = "5vw";
+                projects[i].style.bottom = "7vw";
                 projects[i].style.opacity = "0";
             }
         }
@@ -127,7 +127,7 @@ socials.forEach((social) => {
 });
 links.forEach((social) => {
     social.style.opacity = "1";
-    social.style.top = "0";
+    social.style.left = "0";
 });
 
 document.getElementById("front1").style.opacity = "1";

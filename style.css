@@ -1,6 +1,6 @@
 /* Background pictures from https://www.svgbackgrounds.com
     HIGHLY RECOMMEDED */
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap');
 * {
     scroll-behavior: smooth;
     transition: all ease-in-out 50ms;
@@ -38,6 +38,7 @@ nav {
     width: 60%;
     margin-left: 20%;
     z-index: 5;
+    letter-spacing: 0.05rem;
 }
 
 .nav-1 {
@@ -48,7 +49,6 @@ nav {
 
 .title {
     font-weight: bolder;
-    transition: all ease-in-out 100ms;
 }
 
 .title:hover {
@@ -88,20 +88,38 @@ svg {
 
 .links li {
     position: relative;
-    top: -25px;
+    left: -1rem;
     opacity: 0;
 }
 
 .links li:nth-child(1) {
+    left: 0;
+    opacity: 1;
+    margin-right: 1rem;
+    transition: all cubic-bezier(.17,.67,.29,1.5) 750ms;
+}
+.links li:nth-child(1):hover {
+    transform: rotate(270deg);
+    color: var(--day-main);
+}
+
+body.dark-theme .links li:nth-child(1):hover {
+    color: var(--night-main);
+}
+
+.links li:nth-child(2) {
     transition: all ease-in-out 450ms;
 }
-.links li:nth-child(2) {
+
+.links li:nth-child(3) {
     transition: all ease-in-out 500ms;
 }
-.links li:nth-child(3) {
+
+.links li:nth-child(4) {
     transition: all ease-in-out 550ms;
 }
-.links li:nth-child(4) {
+
+.links li:nth-child(5) {
     transition: all ease-in-out 600ms;
 }
 
@@ -180,11 +198,11 @@ body.dark-theme .theme-button img{
 }
 
 .theme-button img:hover {
-    box-shadow: 0 0 5px var(--day-main);
+    box-shadow: 0 0 3px var(--day-main);
 }
 
 body.dark-theme .theme-button img:hover {
-    box-shadow: 0 0 5px var(--night-main);
+    box-shadow: 0 0 3px var(--night-main);
 }
 
 .theme-button img {
@@ -285,6 +303,10 @@ body.dark-theme section:nth-child(even) {
     background: linear-gradient(180deg, #121212, #000);
 }
 
+#Projects {
+    height: auto;
+}
+
 .front {
     height: 80vh;
     width: 60%;
@@ -306,18 +328,17 @@ body.dark-theme section:nth-child(even) {
     position: relative;
     top: -1vh;
     opacity: 0;
+    transition: all ease-in-out 500ms;
+    transition-delay: 200ms;
 }
 
-#front1 {
-    transition: all ease-in-out 500ms;
-}
 #front2 {
-    transition: all ease-in-out 700ms;
+    transition-delay: 300ms;
 }
 #front3
 {
+    transition-delay: 400ms;
     font-weight: 400;
-    transition: all ease-in-out 900ms;
 }
 
 body.dark-theme .front {
@@ -382,8 +403,8 @@ body.dark-theme .front {
 
 .social-scroll svg:hover {
     opacity: 1;
-    transform: translateY(-2px);
-}
+    transform: translateY(-0.1rem);
+}   
 
 body.dark-theme .social:hover > .social-scroll::after{
     background-color: var(--night-main);
@@ -585,23 +606,31 @@ body.dark-theme svg:hover, body.dark-theme .skill-button:hover svg {
     filter: invert(89%) sepia(67%) saturate(1730%) hue-rotate(359deg) brightness(109%) contrast(102%);   
 }
 
+.project-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
 .project
 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-evenly;
-    height: 12rem;
+    justify-content: space-between;
+    height: 15rem;
     width: 15rem;
     font-size: large;
     border-top: 2px solid #8a2be260;
     border-right: 2px solid #8a2be260;
     border-radius: 0 10px;
-    padding: 0.5rem;
+    padding: 1rem;
     background: linear-gradient(45deg, #FFF3, #FFF);
     text-align: left;
     box-sizing: border-box;
     transition: all ease-in 200ms;
+    position: relative;
 }
 
 body.dark-theme .project{
@@ -646,7 +675,7 @@ body.dark-theme .project:hover {
 
 .tech li {
     border-radius: 10px;
-    font-size: small;
+    font-size: 1rem;
     background-color: #6663;
     margin: 0.25rem;
     padding: 7.5px;
@@ -692,7 +721,7 @@ h1, h2, h3, span, p {
     position: absolute;
     opacity: 0;
     height: 100vh;
-    width: 60vw;
+    width: 70vw;
     top: 0;
     left: -150vw;
     font-weight: 300;
@@ -710,7 +739,7 @@ body.dark-theme .links-mobile{
     position: fixed;
     backdrop-filter: blur(5px);
     height: 110vh;
-    width: 40vw;
+    width: 30vw;
     top: 0;
     left: -100vw;
     transition: all ease-in-out 300ms;
@@ -718,7 +747,7 @@ body.dark-theme .links-mobile{
 }
 
 .blur-active {
-    transform: translateX(160vw);
+    transform: translateX(170vw);
 }
 
 .links-mobile-main {
@@ -833,6 +862,7 @@ body.dark-theme .hamb.active span {
     transform: rotate(45deg);
     background-color: var(--heart);
     margin-left: 0.6rem;
+    transition: all ease-in-out 200ms;
 }
 
 #heart:before,
@@ -851,11 +881,13 @@ body.dark-theme .hamb.active span {
 #heart:before{
     bottom: 0px;
     left: -7px;
+    transition: all ease-in-out 400ms;
 }
 
 #heart:after{
     top: -7px;
     right: 0px;
+    transition: all ease-in-out 400ms;
 }
 
 #heart:hover {
@@ -905,7 +937,6 @@ body.dark-theme .hamb.active span {
     
     .sidenav a:hover, .link:hover {
         opacity: 1;
-        color: #666;
     }
 
     .theme-scroll {
@@ -953,7 +984,6 @@ body.dark-theme .hamb.active span {
     
     .project {
         width: 90%;
-        height: auto;
     }
 }
 

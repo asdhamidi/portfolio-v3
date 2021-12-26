@@ -85,14 +85,14 @@ main.onscroll = () => {
         {
             /** This will fade-in the projects
              * as they scroll into view and fade-out them as they scroll out.**/
-            if(current + (window.innerHeight * 0.75) >= projects[i].offsetTop + contents[2].offsetTop )
+            if(current + (window.innerHeight * 0.5) >= projects[i].offsetTop + contents[2].offsetTop )
             {
-                projects[i].style.bottom = "0";
+                projects[i].style.right = "0";
                 projects[i].style.opacity = "1";
             }
             else
             {
-                projects[i].style.bottom = "7vw";
+                projects[i].style.right = "3vw";
                 projects[i].style.opacity = "0";
             }
         }
@@ -102,7 +102,7 @@ main.onscroll = () => {
         {
             /** This will fade-in the sections and headings
              * as they scroll into view and fade-out them as they scroll out.**/
-            if(current + (window.innerHeight * 0.9) >= contents[i].offsetTop)
+            if(current + (window.innerHeight * 0.75) >= contents[i].offsetTop)
             {
                 contents[i].style.top = "0";
                 contents[i].style.opacity = "1";
@@ -120,7 +120,6 @@ main.onscroll = () => {
 };
 
 // Fade-in for nav-bar, front page & front-page socials.
-front[0].style.opacity = "1";
 socials.forEach((social) => {
     social.style.opacity = "1";
     social.style.bottom = "0";
@@ -129,13 +128,17 @@ links.forEach((social) => {
     social.style.opacity = "1";
     social.style.left = "0";
 });
+let fronts = [document.getElementById("front1"),
+document.getElementById("front2"),
+document.getElementById("front3")];
 
-document.getElementById("front1").style.opacity = "1";
-document.getElementById("front1").style.top = "0";
-document.getElementById("front2").style.opacity = "1";
-document.getElementById("front2").style.top = "0";
-document.getElementById("front3").style.opacity = "0.5";
-document.getElementById("front3").style.top = "0";
+front[0].style.opacity = "1";
+fronts.forEach((fr) => {
+    fr.style.opacity = "1";
+    fr.style.top = "0";                
+});
+
+fronts[2].style.opacity = "0.5";
 
 // Theme changing function.
 function changeTheme(e)

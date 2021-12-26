@@ -12,6 +12,17 @@
     --night-main: rgb(255,236,0);
 }
 
+
+::selection {
+    color: white;
+    background: var(--day-main);
+}
+
+body.dark-theme ::selection {
+    color: black;
+    background: var(--night-main);
+}
+
 html,
 body {
     height: 100vh;
@@ -37,7 +48,7 @@ nav {
     font-size: 1.25rem;
     width: 60%;
     margin-left: 20%;
-    z-index: 5;
+    z-index: 11;
     letter-spacing: 0.05rem;
 }
 
@@ -90,6 +101,7 @@ svg {
     position: relative;
     left: -1rem;
     opacity: 0;
+    transition: all ease-in-out 500ms;
 }
 
 .links li:nth-child(1) {
@@ -98,29 +110,36 @@ svg {
     margin-right: 1rem;
     transition: all cubic-bezier(.17,.67,.29,1.5) 750ms;
 }
+.links li:nth-child(1)::after {
+    content: "|";
+    opacity: 0;
+}
+
 .links li:nth-child(1):hover {
     transform: rotate(270deg);
     color: var(--day-main);
 }
-
+.links li:nth-child(1):hover::after{
+    opacity: 1;
+}
 body.dark-theme .links li:nth-child(1):hover {
     color: var(--night-main);
 }
 
 .links li:nth-child(2) {
-    transition: all ease-in-out 450ms;
+    transition-delay: 300ms;
 }
 
 .links li:nth-child(3) {
-    transition: all ease-in-out 500ms;
+    transition-delay: 400ms;
 }
 
 .links li:nth-child(4) {
-    transition: all ease-in-out 550ms;
+    transition-delay: 500ms;
 }
 
 .links li:nth-child(5) {
-    transition: all ease-in-out 600ms;
+    transition-delay: 600ms;
 }
 
 .links a {
@@ -173,7 +192,7 @@ body.dark-theme .links a:hover {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    z-index: 5;
+    z-index: 11;
     transition: all ease-in-out 300ms;
 }
 
@@ -280,7 +299,7 @@ section {
     width: 60%;
     padding: 0 20%;
     height: 100vh;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     scroll-snap-stop: always;
 }
 
@@ -475,6 +494,8 @@ footer {
     width: calc(100% - 45px);
     border-radius: 0 50px 0 0;
     background-color: #eee;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
 }
 
 body.dark-theme footer {
@@ -703,13 +724,8 @@ h1, h2, h3, span, p {
     margin: 0.5rem 0;
 }
 
-.hamb {
-    z-index: 5;
-}
-
 .links-menu {
     background-color: white;
-    z-index: 2;
 }
 
 .links-mobile {
@@ -726,8 +742,9 @@ h1, h2, h3, span, p {
     left: -150vw;
     font-weight: 300;
     font-size: 1.5rem;
-    transition: all ease-in-out 300ms;
+    transition: all ease-in-out 500ms;
     box-shadow: 1px 0px 10px gray;
+    z-index: 11;
 }
 
 body.dark-theme .links-mobile{
@@ -737,17 +754,19 @@ body.dark-theme .links-mobile{
 
 .blur-wrapper {
     position: fixed;
-    backdrop-filter: blur(5px);
-    height: 110vh;
-    width: 30vw;
+    background-color: rgba(0,0,0,.5);
+    opacity: 0;
+    visibility: hidden;
+    height: 100vh;
+    width: 100vw;
     top: 0;
-    left: -100vw;
-    transition: all ease-in-out 300ms;
-    z-index: 6;
+    transition: all ease-in-out 700ms;
+    z-index: 9;
 }
 
 .blur-active {
-    transform: translateX(170vw);
+    opacity: 1;
+    visibility: inherit;
 }
 
 .links-mobile-main {
@@ -774,19 +793,25 @@ body.dark-theme .links-mobile li{
 
 .hamb {
     transition: all ease-in-out 300ms;
-    margin-right: 1rem;
+    display: none;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    margin-right: 0.75rem;
+    z-index: 12;
 }
+
 .hamb input
 {
   display: block;
-  width: 40px;
-  height: 32px;
+  width: 50px;
+  height: 50px;
   position: absolute;
   top: 25px;
   left: 14px;
   
   opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
+  z-index: 11; /* and place it over the hamburger */
   
   -webkit-touch-callout: none;
 }
@@ -794,26 +819,23 @@ body.dark-theme .links-mobile li{
 .hamb span
 {
     display: block;
-    height: 4px;
+    height: 0.2rem;
+    width: 1.5rem;
+    margin: 5px;
     background: #999;
     border-radius: 10px;
-    z-index: 1;
-    transition: all ease-in-out 800ms;
-}
-
-.hamb span:nth-child(2)
-{
-    width: 33px;
+    z-index: 11;
+    transition: all ease-in-out 400ms;
 }
 
 .hamb span:nth-child(3)
 {
-    width: 25px;
+    width: 1.25rem;
 }
 
 .hamb span:nth-child(4)
 {
-    width: 17px;
+    width: 1rem;
 }
 
 .hamb span:nth-child(2), .hamb span:nth-child(4){
@@ -826,23 +848,16 @@ body.dark-theme .links-mobile li{
 }
 
 .hamb.active span:nth-child(2) {
-    transform: translateY(14px) rotate(90deg);
+    transform: translateY(14px) rotate(135deg);
     background-color: var(--day-main);
 }
 
 .hamb.active span:nth-child(4) {
-    transform: translateY(-14px);
+    transform: translateY(-14px) rotate(225deg);
     background-color: var(--day-main);
-    width: 33px;
+    width: 1.5rem;
 }
 
-.hamb.active {
-    transform: rotate(45deg);
-}
-
-.hamb.active input {
-    transform: scale(2);
-}
 body.dark-theme .hamb.active span {
     background-color: var(--night-main);
 }
@@ -896,7 +911,7 @@ body.dark-theme .hamb.active span {
 
 @media screen and (max-width: 1200px) {
     section {
-        height: auto;
+        height: 75vh;
         padding-top: 5rem;
     }
 
@@ -1057,7 +1072,7 @@ body.dark-theme .hamb.active span {
     }
 
     .hamb, .links-menu {
-        display: block;
+        display: flex;
     }
 
     #menu-check:checked ~ .hamb span {

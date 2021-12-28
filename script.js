@@ -92,31 +92,22 @@ main.onscroll = () => {
             }
             else
             {
-                projects[i].style.right = "3vw";
+                projects[i].style.right = "5vw";
                 projects[i].style.opacity = "0";
             }
         }
     }
         
-        for(let i = 0; i < contents.length; i++)
+    for(let i = 0; i < contents.length; i++)
+    {
+        /** This will fade-in the sections and headings
+         * as they scroll into view.**/
+        if(current + (window.innerHeight * 0.75) >= contents[i].offsetTop)
         {
-            /** This will fade-in the sections and headings
-             * as they scroll into view and fade-out them as they scroll out.**/
-            if(current + (window.innerHeight * 0.75) >= contents[i].offsetTop)
-            {
-                contents[i].style.top = "0";
-                contents[i].style.opacity = "1";
-                headings[i].style.right = "0";
-                headings[i].style.opacity = "1";
-            }
-            else
-            {
-                contents[i].style.top = "3vw";
-                contents[i].style.opacity = "0";
-                headings[i].style.right = "3vw";
-                headings[i].style.opacity = "0";
-            }
+            contents[i].classList.add("content-active");
+            headings[i].classList.add("heading-active");
         }
+    }
 };
 
 // Fade-in for nav-bar, front page & front-page socials.

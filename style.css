@@ -432,7 +432,7 @@ body.dark-theme .social:hover > .social-scroll::after{
     color: black;
     font-weight: bolder;
     position: relative;
-    transition: all ease-in-out 700ms;
+    transition: all ease-in-out 800ms;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -483,17 +483,17 @@ body.dark-theme .heading {
     transition: all ease-in-out 800ms;
     opacity: 0;
     position: relative;
-    bottom: -1vw;
+    bottom: -3vw;
     width: 60vw;
 }
 
 .content-active {
-    transform: translateY(-1vw);
+    transform: translateY(-3vw);
     opacity: 1;
 }
 
 main {
-    overflow: auto;
+    overflow-x: hidden;
     height: 100vh;
 }
 

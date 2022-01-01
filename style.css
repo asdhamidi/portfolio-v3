@@ -247,9 +247,31 @@ body.dark-theme .theme-button img:hover {
     left: 1.5rem;
 }
 
-.sidenav span {
-    font-size: 1.75rem;
-    line-height: 1rem;
+.sidenav .dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 1rem;
+    border: 2px solid gray;
+    transition: all 300ms ease-in-out;
+}
+
+.link small {
+    opacity: 0.9;
+}
+
+.active small {
+    opacity: 1;
+    font-weight: bold;
+}
+
+.active .dot {
+    background-color: var(--day-main);
+    border-color: var(--day-main);
+}
+
+body.dark-theme .active .dot {
+    background-color: var(--night-main);
+    border-color: var(--night-main);
 }
 
 .link a {
@@ -262,18 +284,19 @@ body.dark-theme .theme-button img:hover {
 .link {
     display: flex;
     align-items: center;
-    transition: all 300ms ease-in-out;
+    transition: all 100ms ease-in-out;
     border: none;
     width: 100%;
     opacity: 0.5;
     background-color: transparent;
     color: #666;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
 }
 
 .active, .sidenav a:hover, .link:hover {
-    opacity: 1;
-    color: blueviolet;
+    opacity: 0.8;
+    color: var(--day-main);
 }
 
 body.dark-theme .active, body.dark-theme .sidenav a:hover, body.dark-theme .link:hover {
@@ -281,7 +304,6 @@ body.dark-theme .active, body.dark-theme .sidenav a:hover, body.dark-theme .link
 }
 
 .active {
-    font-size: 1.25rem;
     opacity: 1;
 }
 
@@ -944,6 +966,10 @@ body.dark-theme .hamb.active span {
         font-size: 1.1rem;
     }
 
+    .sidenav .dot {
+        width: 0.25rem;
+        height: 0.25rem;
+    }
     .sidenav {
         left: 95vw;
     }

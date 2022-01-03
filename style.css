@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300&display=swap');
 * {
     scroll-behavior: smooth;
-    transition: all ease-in-out 50ms;
 }
 
 :root {
@@ -94,7 +93,7 @@ svg {
     border: 25px;
     padding-bottom: 2px;
     border-bottom: 1px solid transparent;
-    transition: all ease-in-out 200ms;
+    transition: all ease-in-out 500ms;
 }
 
 .links li {
@@ -320,7 +319,7 @@ section {
     margin: 0;
     width: 80%;
     padding: 0 20%;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 section:nth-child(odd) {
@@ -454,7 +453,7 @@ body.dark-theme .social:hover > .social-scroll::after{
     color: black;
     font-weight: bolder;
     position: relative;
-    transition: all ease-in-out 800ms;
+    transition: all ease-in-out 300ms;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -474,7 +473,7 @@ body.dark-theme .social:hover > .social-scroll::after{
     flex-grow:  1;
     height: 1px;
     background-color: gray;
-    transition: all ease-in-out 300ms;
+    transition: all ease-in-out 750ms;
 }
 
 section:hover > .heading::after {
@@ -502,11 +501,12 @@ body.dark-theme .heading {
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    transition: all ease-in-out 800ms;
+    transition: all ease-in-out 750ms;
     opacity: 0;
     position: relative;
     bottom: -3vw;
     width: 60vw;
+    transition-delay: 200ms;
 }
 
 .content-active {
@@ -941,6 +941,7 @@ body.dark-theme .hamb.active span {
 @media screen and (max-width: 1200px) {
     section {
         height: 75vh;
+        min-height: auto;
         padding-top: 5rem;
     }
 
@@ -967,18 +968,19 @@ body.dark-theme .hamb.active span {
     }
 
     .sidenav .dot {
-        width: 0.25rem;
-        height: 0.25rem;
+        width: 0.33rem;
+        height: 0.33rem;
     }
+
     .sidenav {
-        left: 95vw;
+        left: 93vw;
     }
 
     .sidenav a small{
         display: none;
     }
     
-    .sidenav a:hover, .link:hover {
+    .sidenav .active {
         opacity: 1;
     }
 

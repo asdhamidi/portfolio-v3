@@ -102,7 +102,7 @@ main.onscroll = () => {
     {
         /** This will fade-in the sections and headings
          * as they scroll into view.**/
-        if(current + (window.innerHeight * 0.75) >= contents[i].offsetTop)
+        if(current + (window.innerHeight * 0.6) >= contents[i].offsetTop)
         {
             contents[i].classList.add("content-active");
             headings[i].classList.add("heading-active");
@@ -110,26 +110,29 @@ main.onscroll = () => {
     }
 };
 
-// Fade-in for nav-bar, front page & front-page socials.
-socials.forEach((social) => {
-    social.style.opacity = "1";
-    social.style.bottom = "0";
-});
-links.forEach((social) => {
-    social.style.opacity = "1";
-    social.style.left = "0";
-});
-let fronts = [document.getElementById("front1"),
-document.getElementById("front2"),
-document.getElementById("front3")];
-
-front[0].style.opacity = "1";
-fronts.forEach((fr) => {
-    fr.style.opacity = "1";
-    fr.style.top = "0";                
-});
-
-fronts[2].style.opacity = "0.5";
+// Loading animation for the front page and nav-bar.
+setTimeout(loading_animation, 100);
+function loading_animation()
+{
+    socials.forEach((social) => {
+        social.style.opacity = "1";
+        social.style.bottom = "0";
+    });
+    links.forEach((social) => {
+        social.style.opacity = "1";
+        social.style.left = "0";
+    });
+    let fronts = [document.getElementById("front1"),
+    document.getElementById("front2"),
+    document.getElementById("front3")];
+    
+    front[0].style.opacity = "1";
+    fronts.forEach((fr) => {
+        fr.style.opacity = "1";
+        fr.style.top = "0";                
+    });
+    fronts[2].style.opacity = "0.5";
+}
 
 // Theme changing function.
 function changeTheme(e)

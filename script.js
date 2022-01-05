@@ -8,6 +8,8 @@ let menuChk = document.getElementById("menu-check");
 let socials = document.querySelectorAll(".social ul li");
 let social = document.querySelector(".social ul");
 let links = document.querySelectorAll(".links li");
+let projects = document.querySelectorAll(".project-titles li");
+let project_cards = document.querySelectorAll(".project-content");
 let nav = document.querySelector("nav");
 let contents = document.querySelectorAll(".content");
 let headings = document.querySelectorAll(".heading");
@@ -78,24 +80,6 @@ main.onscroll = () => {
         nav.classList.remove("mobile-nav")
         else
         nav.classList.add("mobile-nav")
-
-        let projects = document.querySelectorAll(".project");
-
-        for(let i = 0; i < projects.length; i++)
-        {
-            /** This will fade-in the projects
-             * as they scroll into view and fade-out them as they scroll out.**/
-            if(current + (window.innerHeight * 0.5) >= projects[i].offsetTop + contents[2].offsetTop )
-            {
-                projects[i].style.right = "0";
-                projects[i].style.opacity = "1";
-            }
-            else
-            {
-                projects[i].style.right = "5vw";
-                projects[i].style.opacity = "0";
-            }
-        }
     }
         
     for(let i = 0; i < contents.length; i++)
@@ -110,8 +94,24 @@ main.onscroll = () => {
     }
 };
 
+//Project Menu
+projects.forEach((proj) => {
+    proj.addEventListener("click", () => {
+        for(let i = 0; i < 5; i++) 
+        {
+            project_cards[i].classList.remove("active")
+            projects[i].classList.remove("active");
+        }
+
+        let id = parseInt(proj.id);
+        projects[id - 1].classList.add("active");
+        project_cards[id - 1].classList.add("active");
+    });
+});
+
 // Loading animation for the front page and nav-bar.
-setTimeout(loading_animation, 100);
+front[0].style.opacity = "1";
+setTimeout(loading_animation, 500);
 function loading_animation()
 {
     socials.forEach((social) => {
@@ -126,7 +126,6 @@ function loading_animation()
     document.getElementById("front2"),
     document.getElementById("front3")];
     
-    front[0].style.opacity = "1";
     fronts.forEach((fr) => {
         fr.style.opacity = "1";
         fr.style.top = "0";                

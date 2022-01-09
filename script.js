@@ -6,7 +6,7 @@ let theme = document.getElementById("theme");
 let menu = document.querySelector(".links-mobile");
 let menuChk = document.getElementById("menu-check");
 let socials = document.querySelectorAll(".social ul li");
-let social = document.querySelector(".social ul");
+let social = document.querySelector(".side-social ul");
 let links = document.querySelectorAll(".links li");
 let projects = document.querySelectorAll(".project-titles li");
 let project_cards = document.querySelectorAll(".project-content");
@@ -56,7 +56,6 @@ main.onscroll = () => {
             document.querySelector(".sidenav").classList.add("sidenav-active");
             title.classList.add("title-scroll");
             theme.classList.add("theme-scroll");
-            social.classList.add("social-hide")
             if(current > 500)
             social.classList.add("social-scroll")
         }
@@ -65,7 +64,6 @@ main.onscroll = () => {
             document.querySelector(".sidenav").classList.remove("sidenav-active");
             title.classList.remove("title-scroll");
             theme.classList.remove("theme-scroll");
-            social.classList.remove("social-hide")
             if(current < 500)
             social.classList.remove("social-scroll")
         } 
@@ -116,7 +114,7 @@ function loading_animation()
 {
     socials.forEach((social) => {
         social.style.opacity = "1";
-        social.style.bottom = "0";
+        social.style.left = "0";
     });
     links.forEach((social) => {
         social.style.opacity = "1";

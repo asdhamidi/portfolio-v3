@@ -364,41 +364,47 @@ body.dark-theme .front {
 .social ul li {
     opacity: 0;
     position: relative;
-    bottom: -2rem;
+    left: -1rem;
+    transition: all ease-in-out 850ms;
 }
 
 .social ul li:nth-child(1) {
-    transition: all ease-in-out 850ms;
+    transition-delay: 100ms;
 }
 .social ul li:nth-child(2) {
-    transition: all ease-in-out 950ms;
+    transition-delay: 200ms;
 }
 .social ul li:nth-child(3) {
-    transition: all ease-in-out 1150ms;
+    transition-delay: 300ms;
 }
 .social ul li:nth-child(4) {
-    transition: all ease-in-out 1250ms;
+    transition-delay: 400ms;
 }
 .social ul li:nth-child(5) {
-    transition: all ease-in-out 1350ms;
+    transition-delay: 500ms;
 }
 .social ul li:nth-child(6) {
-    transition: all ease-in-out 1450ms;
+    transition-delay: 600ms;
 }
 
 .social ul svg {
     max-width: 100%;
 }
 
-.social-scroll {
+.side-social ul{
     right: 20px;
     width: 40px;
     position: fixed;
-    bottom: 0px;
+    bottom: -50rem;
+    transition: all ease-in-out 500ms;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 5;
+}
+
+.social-scroll {
+    transform: translateY(-100rem);
 }
 
 .social-scroll::after {
@@ -827,8 +833,12 @@ body.dark-theme .links-mobile{
     height: 100vh;
     width: 100vw;
     top: 0;
-    transition: all ease-in-out 500ms;
-    opacity: 0.33;
+    transition: all cubic-bezier(0.5,0,0,0.75) 500ms;
+}
+
+.blur-active {
+    backdrop-filter: blur(5px);
+    visibility: visible;
 }
 
 .links-mobile li{
@@ -999,6 +1009,7 @@ footer svg:hover {
 
     #Projects .content {
         height: 100%;
+        width: 100%;
     }
 }
 
@@ -1067,7 +1078,6 @@ footer svg:hover {
 
     .project-titles {
         flex-direction: row;
-        padding: 0% 1rem;
         overflow: scroll;
         font-size: 1rem;
         overflow-y: hidden;
@@ -1075,6 +1085,7 @@ footer svg:hover {
         padding: 0.5rem;
         flex: 1;
     }
+
     .project-menu {
         height: 100%;
         display: flex;
@@ -1082,17 +1093,18 @@ footer svg:hover {
     }
     
     .project-card {
-        padding: 1rem;
-        flex: 5;
+        padding: 1rem 0.5rem;
+        flex: 4;
     }
 
     .project-content {
+        height: auto;
         justify-content: flex-start;
         gap: 1rem;
     }
 
     .project-content p {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .project-heading {

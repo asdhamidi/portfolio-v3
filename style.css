@@ -396,7 +396,7 @@ body.dark-theme .front {
     width: 40px;
     position: fixed;
     bottom: -50rem;
-    transition: all ease-in-out 500ms;
+    transition: all ease-in-out 1500ms;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -404,7 +404,7 @@ body.dark-theme .front {
 }
 
 .social-scroll {
-    transform: translateY(-100rem);
+    transform: translateY(-50rem);
 }
 
 .social-scroll::after {
@@ -1103,16 +1103,8 @@ footer svg:hover {
         gap: 1rem;
     }
 
-    .project-content p {
-        font-size: 1rem;
-    }
-
     .project-heading {
         font-size: 1.25rem;
-    }
-
-    .tech li {
-        font-size: 0.75rem;
     }
 }
 

@@ -58,14 +58,14 @@ main.onscroll = () => {
             theme.classList.add("theme-scroll");
             if(current > 500)
             social.classList.add("social-scroll")
+            else
+            social.classList.remove("social-scroll")
         }
         else
         {
             document.querySelector(".sidenav").classList.remove("sidenav-active");
             title.classList.remove("title-scroll");
             theme.classList.remove("theme-scroll");
-            if(current < 500)
-            social.classList.remove("social-scroll")
         } 
     }
     else
@@ -73,6 +73,7 @@ main.onscroll = () => {
         // Removing sidenav, title, and theme button from left side when on front page.
         title.classList.remove("title-scroll");
         theme.classList.remove("theme-scroll");
+        social.classList.remove("social-scroll")
 
         if(main.scrollTop < 300)
         nav.classList.remove("mobile-nav")
@@ -94,7 +95,7 @@ main.onscroll = () => {
 
 //Project Menu
 projects.forEach((proj) => {
-    proj.addEventListener("click", () => {
+    proj.addEventListener("mouseenter", () => {
         for(let i = 0; i < 5; i++) 
         {
             project_cards[i].classList.remove("active")

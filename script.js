@@ -149,6 +149,8 @@ function openMenu()
     menu.classList.toggle("menu-active");
     hamb.classList.toggle("active");
     blur.classList.toggle("blur-active");
+    if(main.scrollTop > 300)
+    nav.classList.toggle("mobile-nav");
     document.querySelector(".sidenav").classList.toggle("sidenav-active");
     
     if(menuChk.checked)

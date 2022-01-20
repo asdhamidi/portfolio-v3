@@ -155,7 +155,11 @@ body.dark-theme .links li:nth-child(1):hover {
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     overflow: hidden;
-    opacity: 0.4;
+    color: #888;
+}
+
+body.dark-theme .links a {
+    color: #555;
 }
 
 body.dark-theme .links a:before {
@@ -182,7 +186,6 @@ body.dark-theme .links a:before {
 
 .links a:hover {
     color: var(--day-main);
-    opacity: 0.8;
 }
 
 body.dark-theme .links a:hover {
@@ -215,7 +218,7 @@ body.dark-theme .links a:hover {
     padding: 0.5rem;
     height: 1.25rem;
     width: 1.25rem;
-    border-radius: 18px;
+    border-radius: 15px;
     border: 1px solid #666;
     transition: all ease-in-out 300ms;
 }
@@ -338,19 +341,26 @@ main {
 
 #front1, #front2, #front3 {
     position: relative;
-    top: -1vh;
+    bottom: -5vh;
     opacity: 0;
     transition: all ease-in-out 500ms;
     transition-delay: 200ms;
 }
 
+#front1 {
+    font-size: 1.1rem;
+}
+
 #front2 {
-    transition-delay: 300ms;
+    margin: 0.5rem 0; 
+    font-size: 3rem;
+    transition-delay: 500ms;
 }
 #front3
 {
-    transition-delay: 400ms;
+    transition-delay: 750ms;
     font-weight: 400;
+    font-size: 1.1rem;
 }
 
 body.dark-theme .front {
@@ -1019,7 +1029,7 @@ footer svg:hover {
         padding-left: 10%;
         padding-right: 10%;
         width: 80%;
-        height: 100vh;
+        height: 90vh;
     }
     
     nav {
@@ -1084,7 +1094,7 @@ footer svg:hover {
         overflow-y: hidden;
         align-items: flex-end;
         padding: 0.5rem;
-        max-height: 4rem;
+        max-height: 5rem;
         flex: 1;
     }
 
@@ -1096,7 +1106,7 @@ footer svg:hover {
     
     .project-card {
         padding: 1rem 0.5rem;
-        flex: 3;
+        flex: 2;
     }
 
     .project-content {
@@ -1123,6 +1133,46 @@ footer svg:hover {
 
     .content {
         width: 100%;
+    }
+    
+    .links {
+        display: none;
+    }
+        
+    nav {
+        align-items: center;
+        justify-content: left;
+        position: fixed;
+        top: 0%;
+        background-color: transparent;
+        width: 100%;
+        margin-left: 0;
+        padding: 1rem 5%;
+        transition: all ease-in-out 500ms;
+    }
+    
+    .mobile-nav {
+        background-color: #EEE;
+    }
+
+    body.dark-theme .mobile-nav{
+        background-color: #121212;
+    }
+
+    .title {
+        display: none;
+    }
+
+    .hamb, .links-menu {
+        display: flex;
+    }
+
+    #menu-check:checked ~ .hamb span {
+        background-color: blue;
+    }
+
+    .heading::after {
+        display: none;
     }
 }
 
@@ -1167,45 +1217,6 @@ footer svg:hover {
 
     .heading {
         align-self:flex-start;
-    }
-
-    .links {
-        display: none;
-    }
-
-    nav {
-        align-items: center;
-        justify-content: left;
-        position: fixed;
-        top: 0%;
-        background-color: transparent;
-        width: 100%;
-        margin-left: 0;
-        padding: 1rem;
-        transition: all ease-in-out 500ms;
-    }
-    
-    .mobile-nav {
-        background-color: #EEE;
-    }
-    body.dark-theme .mobile-nav{
-        background-color: #121212;
-    }
-
-    .title {
-        display: none;
-    }
-
-    .hamb, .links-menu {
-        display: flex;
-    }
-
-    #menu-check:checked ~ .hamb span {
-        background-color: blue;
-    }
-
-    .heading::after {
-        display: none;
     }
     
     footer {

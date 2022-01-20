@@ -122,12 +122,12 @@ function loading_animation()
         social.style.left = "0";
     });
     let fronts = [document.getElementById("front1"),
-    document.getElementById("front2"),
-    document.getElementById("front3")];
+                    document.getElementById("front2"),
+                        document.getElementById("front3")];
     
     fronts.forEach((fr) => {
         fr.style.opacity = "1";
-        fr.style.top = "0";                
+        fr.style.bottom = "0";                
     });
     fronts[2].style.opacity = "0.5";
 }

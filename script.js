@@ -51,21 +51,19 @@ main.onscroll = () => {
     if(window.innerWidth > 666)
     {
         // Displaying sidenav and title as we pass the front page.
-        if(current > 300) 
+        if(current > 500) 
         {
             document.querySelector(".sidenav").classList.add("sidenav-active");
             title.classList.add("title-scroll");
             theme.classList.add("theme-scroll");
-            if(current > 500)
-            social.classList.add("social-scroll")
-            else
-            social.classList.remove("social-scroll")
+            social.classList.add("social-scroll");
         }
         else
         {
             document.querySelector(".sidenav").classList.remove("sidenav-active");
             title.classList.remove("title-scroll");
             theme.classList.remove("theme-scroll");
+            social.classList.remove("social-scroll");
         } 
     }
     else

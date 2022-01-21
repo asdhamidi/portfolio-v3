@@ -259,6 +259,8 @@ body.dark-theme .theme-button img:hover {
     height: 0.5rem;
     border-radius: 1rem;
     border: 2px solid gray;
+    padding: 0.25rem;
+    box-sizing: border-box;
     transition: all 300ms ease-in-out;
 }
 
@@ -274,6 +276,14 @@ body.dark-theme .theme-button img:hover {
 .active .dot {
     background-color: var(--day-main);
     border-color: var(--day-main);
+}
+
+.link:hover .dot{
+    border-color: var(--day-main);
+}
+
+body.dark-theme .link:hover .dot{
+    border-color: var(--night-main);
 }
 
 body.dark-theme .active .dot {
@@ -322,6 +332,12 @@ a {
 main {
     overflow-x: hidden;
     height: 100vh;
+    transition: all ease-in-out 500ms;
+    z-index: 10;
+}
+
+.menu-open-main {
+    transform: scale(0.9);
 }
 
 .front {
@@ -347,20 +363,13 @@ main {
     transition-delay: 200ms;
 }
 
-#front1 {
-    font-size: 1.1rem;
-}
-
 #front2 {
-    margin: 0.5rem 0; 
-    font-size: 3rem;
     transition-delay: 500ms;
 }
+
 #front3
 {
     transition-delay: 750ms;
-    font-weight: 400;
-    font-size: 1.1rem;
 }
 
 body.dark-theme .front {
@@ -404,7 +413,7 @@ body.dark-theme .front {
     width: 40px;
     position: fixed;
     bottom: -50rem;
-    transition: all ease-in-out 1500ms;
+    transition: all ease-in-out 750ms;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -425,7 +434,7 @@ body.dark-theme .front {
     transition: all ease-in-out 300ms;
 }
 
-.social:hover > .social-scroll::after{
+.side-social:hover > .social-scroll::after{
     background-color: var(--day-main);
 }
 
@@ -434,7 +443,7 @@ body.dark-theme .front {
     transform: translateY(-0.1rem);
 }   
 
-body.dark-theme .social:hover > .social-scroll::after{
+body.dark-theme .side-social:hover > .social-scroll::after{
     background-color: var(--night-main);
 }
 
@@ -457,6 +466,8 @@ section:nth-child(odd) {
 
 body.dark-theme section:nth-child(odd) {
     background: url("./assets/bg-dark.svg") no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 section:nth-child(even) {
@@ -848,6 +859,7 @@ body.dark-theme .links-mobile{
 
 .blur-active {
     background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
     visibility: visible;
 }
 

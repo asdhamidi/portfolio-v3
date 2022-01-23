@@ -673,6 +673,7 @@ body.dark-theme svg:hover, body.dark-theme .skill-button:hover svg {
     justify-content: flex-start;
     align-items: flex-start;
     height: 100%;
+    border-radius: 20px 0 0 20px;
 }
 
 body.dark-theme .project-titles {
@@ -710,6 +711,7 @@ body.dark-theme .project-titles .active {
     background-color: #EEE;
     padding: 1rem 2rem;
     height: 100%;
+    border-radius: 0 20px 20px 0;
 }
 
 body.dark-theme .project-card {
@@ -1108,6 +1110,7 @@ footer svg:hover {
         padding: 0.5rem;
         max-height: 5rem;
         flex: 1;
+        border-radius: 15px 15px 0 0;
     }
 
     .project-menu {
@@ -1118,17 +1121,19 @@ footer svg:hover {
     
     .project-card {
         padding: 1rem 0.5rem;
-        flex: 2;
+        flex: 1;
+        border-radius: 0 0 15px 15px;
     }
 
     .project-content {
         height: auto;
         justify-content: flex-start;
         gap: 1rem;
+        padding: 0 0.5rem;
     }
 
     .project-heading {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 }
 

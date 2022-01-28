@@ -128,6 +128,8 @@ function loading_animation()
         fr.style.bottom = "0";                
     });
     fronts[2].style.opacity = "0.5";
+    document.querySelector(".theme-button").classList.add("theme-on");
+    hamb.classList.add("hamb-load");
 }
 
 // Theme changing function.
@@ -148,8 +150,10 @@ function openMenu()
     hamb.classList.toggle("active");
     blur.classList.toggle("blur-active");
     if(main.scrollTop > 300)
-    nav.classList.toggle("mobile-nav");
-    document.querySelector(".sidenav").classList.toggle("sidenav-active");
+    {
+        nav.classList.toggle("mobile-nav");
+        document.querySelector(".sidenav").classList.toggle("sidenav-active");
+    }
     
     if(menuChk.checked)
     menuChk.checked = false;

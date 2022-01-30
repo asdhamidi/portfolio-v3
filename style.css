@@ -221,12 +221,11 @@ body.dark-theme .links a:hover {
 }
 
 .theme-button img{
-    background-color: #BBF;
+    background-color: #CCF;
     padding: 0.5rem;
     height: 1.25rem;
     width: 1.25rem;
     border-radius: 15px;
-    border: 1px solid #666;
     transition: all ease-in-out 300ms;
 }
 
@@ -837,10 +836,10 @@ footer svg:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(180deg, #FFF, #BBB);
+    background-color: #fff;
     position: absolute;
     opacity: 0;
-    height: 50vh;
+    height: 60vh;
     width: 100vw;
     left: 0;
     top: -10vw;
@@ -860,7 +859,7 @@ footer svg:hover {
 }
 
 body.dark-theme .links-mobile{
-    background: linear-gradient(180deg, #000, #111);;
+    background-color: #121212;
 }
 
 .blur-wrapper {
@@ -899,11 +898,21 @@ body.dark-theme .links-mobile li{
 .hamb {
     transition: all cubic-bezier(.17,.67,.29,1.5) 500ms;
     display: none;
+    padding: 0.1rem;
     justify-content: center;
     flex-direction: column;
     margin-left: 0.25rem;
     transform: translateX(100px);
     z-index: 12;
+    border-radius: 15px;
+}
+
+.hamb.active {
+    background-color: #DCF;
+}
+
+body.dark-theme .hamb.active {
+    background-color: #888;
 }
 
 .hamb-load {
@@ -1179,7 +1188,7 @@ footer svg:hover {
         margin-left: 0;
         padding: 1rem 5%;
         border-radius: 0 0 20px 20px;
-        transition: all ease-in-out 500ms;
+        transition: all ease-in-out 600ms;
     }
     
     .mobile-nav {

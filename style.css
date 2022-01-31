@@ -726,22 +726,15 @@ body.dark-theme .project-card {
 
 .project-content {
     height: 100%;
-    position: absolute;
-    opacity: 0;
-    visibility: hidden;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     color: black;
     padding-right: 2rem;
-    transform: translateY(-0.5rem);
-    transition: all cubic-bezier(0.5,0,0,0.75) 300ms;
 }
 
 .project-card .active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility:visible;
+    display: flex;
 }
 
 body.dark-theme .project-content {
@@ -1053,11 +1046,6 @@ footer svg:hover {
         min-height: auto;
         padding-top: 5rem;
     }
-
-    #Projects .content {
-        height: 100%;
-        width: 100%;
-    }
 }
 
 @media screen and (max-width: 950px) {
@@ -1143,7 +1131,7 @@ footer svg:hover {
     
     .project-card {
         padding: 1rem 0.5rem;
-        flex: 1;
+        min-height: fit-content;
         border-radius: 0 0 15px 15px;
     }
 
@@ -1156,6 +1144,15 @@ footer svg:hover {
 
     .project-heading {
         font-size: 2rem;
+    }
+    
+    .project-content p {
+        font-size: 1.5rem;
+    }
+
+    #Projects .content {
+        height: 100%;
+        width: 100%;
     }
 }
 

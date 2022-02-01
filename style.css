@@ -8,7 +8,9 @@
 :root {
     --heart: rgb(255, 0, 0);
     --day-main: rgb(138,43,226);
+    --day-main-light: rgba(138,43,226, 0.3);
     --night-main: rgb(255,236,0);
+    --night-main-light: rgba(255,236,0, 0.5);
 }
 
 ::selection {
@@ -41,7 +43,7 @@ body {
 
 body.dark-theme {
     color: white;
-    background-color: #121212;
+    background-color: black;
 }
 
 nav {
@@ -835,12 +837,12 @@ footer svg:hover {
     height: 60vh;
     width: 100vw;
     left: 0;
-    top: -10vw;
+    top: -5vh;
     visibility: hidden;
     border-radius: 0 0 20px 20px;
     font-weight: 300;
     font-size: 1.5rem;
-    transition: all cubic-bezier(0.5,0,0,0.75) 500ms;
+    transition: all cubic-bezier(0.5,0,0,0.75) 300ms;
     box-shadow: 0px 1px 10px black;
     z-index: 11;
 }
@@ -872,7 +874,6 @@ body.dark-theme .links-mobile{
 
 .links-mobile li{
     margin: 1rem;
-    padding: 0.25rem;
     width: 100%;
     text-align: center;
     display: flex;
@@ -882,14 +883,13 @@ body.dark-theme .links-mobile{
 
 .links-mobile li a{
     flex: 1;
-}
-
-body.dark-theme .links-mobile li{
-    border-color: white;
+    margin: 0;
+    padding-bottom: 0%;
+    padding-bottom: 0.25rem;
+    transition-duration: 0ms;
 }
 
 .hamb {
-    transition: all cubic-bezier(.17,.67,.29,1.5) 500ms;
     display: none;
     padding: 0.1rem;
     justify-content: center;
@@ -898,6 +898,8 @@ body.dark-theme .links-mobile li{
     transform: translateX(100px);
     z-index: 12;
     border-radius: 15px;
+    height: 2rem;
+    width: 2rem;
 }
 
 .hamb.active {
@@ -933,18 +935,18 @@ body.dark-theme .hamb.active {
     background: #999;
     border-radius: 10px;
     z-index: 11;
-    transition: all ease-in-out 600ms;
+    transition: all cubic-bezier(.17,.67,.29,1.2) 600ms;
 }
 
 .hamb span:nth-child(2)
 {
     width: 0.75rem;
-    align-self: flex-end;
 }
 
 .hamb span:nth-child(4)
 {
     width: 0.75rem;
+    align-self: flex-end;
 }
 
 .hamb span:nth-child(2), .hamb span:nth-child(4){
@@ -983,9 +985,9 @@ footer {
 }
 
 body.dark-theme footer {
-    background-color: #000;
+    background-color: #121212;
     width: auto;
-    border-radius: 0;
+    border-radius: 50px 50px 0 0;
 }
 
 footer svg {
@@ -1131,13 +1133,12 @@ footer svg:hover {
     
     .project-card {
         padding: 1rem 0.5rem;
-        min-height: fit-content;
+        height: max-content;
         border-radius: 0 0 15px 15px;
     }
 
     .project-content {
         height: auto;
-        justify-content: flex-start;
         gap: 1rem;
         padding: 0 0.5rem;
     }

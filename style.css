@@ -490,15 +490,13 @@ body.dark-theme section:nth-child(even) {
 .heading {
     margin: 0.5rem 0;
     font-size: 3rem;
-    color: black;
+    color: #121212;
     font-weight: bolder;
     position: relative;
     transition: all ease-in-out 300ms;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 100%;
-    gap: 1rem;
     opacity: 0;
     position: relative;
     left: 3vw;
@@ -531,6 +529,14 @@ body.dark-theme .heading {
 .heading-active {
     transform: translateX(-3vw);
     opacity: 1;
+}
+
+.colored {
+    color: var(--day-main);
+}
+
+body.dark-theme .colored {
+    color: var(--night-main);
 }
 
 .content {
@@ -837,7 +843,7 @@ footer svg:hover {
     height: 60vh;
     width: 100vw;
     left: 0;
-    top: -5vh;
+    top: -2vh;
     visibility: hidden;
     border-radius: 0 0 20px 20px;
     font-weight: 300;
@@ -876,7 +882,6 @@ body.dark-theme .links-mobile{
     margin: 1rem;
     width: 100%;
     text-align: center;
-    display: flex;
     font-weight: 300;
     letter-spacing: 0.2rem;
 }
@@ -935,38 +940,18 @@ body.dark-theme .hamb.active {
     background: #999;
     border-radius: 10px;
     z-index: 11;
-    transition: all cubic-bezier(.17,.67,.29,1.2) 600ms;
-}
-
-.hamb span:nth-child(2)
-{
-    width: 0.75rem;
-}
-
-.hamb span:nth-child(4)
-{
-    width: 0.75rem;
-    align-self: flex-end;
-}
-
-.hamb span:nth-child(2), .hamb span:nth-child(4){
-    transform-origin: center;
+    transform-origin: 50%;
+    transition: all cubic-bezier(.17,.67,.29, 1.2) 500ms;
 }
 
 .hamb.active span:nth-child(2) {
-    opacity: 0;
-    transform: scale(.1);
+    transform: translateY(7px) rotate(135deg);
+    background-color: var(--day-main);
 }
 
 .hamb.active span:nth-child(3) {
-    transform: rotate(135deg);
+    transform: translateY(-7px) rotate(-135deg);
     background-color: var(--day-main);
-}
-
-.hamb.active span:nth-child(4) {
-    transform: translateY(-14px) rotate(225deg);
-    background-color: var(--day-main);
-    width: 1.5rem;
 }
 
 body.dark-theme .hamb.active span {

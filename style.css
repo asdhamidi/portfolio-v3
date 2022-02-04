@@ -511,6 +511,7 @@ body.dark-theme section:nth-child(even) {
     flex-grow:  1;
     height: 1px;
     background-color: gray;
+    margin-left: 0.5rem;
     transition: all ease-in-out 750ms;
 }
 
@@ -614,6 +615,7 @@ body.dark-theme .content button:hover {
     border-radius: 0.25rem;
     border: 1px solid #8a2be280;
     opacity: 0.67;
+    user-select: none;
 }
 
 .skill-button p {
@@ -700,6 +702,7 @@ body.dark-theme .project-titles {
     border-bottom: 3px solid transparent;
     transition: all ease-in-out 300ms;
     font-weight: 400;
+    user-select: none;
 }
 
 .project-titles li:hover  {
@@ -782,6 +785,7 @@ body.dark-theme .project-content {
     margin: 0.25rem;
     padding: 10px;
     border: none;
+    user-select: none;
 }
 
 body.dark-theme .tech li {

@@ -1,6 +1,7 @@
 /* Background pictures from https://www.svgbackgrounds.com
     HIGHLY RECOMMEDED */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@100;300&display=swap');
+
 * {
     scroll-behavior: smooth;
 }
@@ -365,7 +366,7 @@ main {
 
 #front1, #front2, #front3 {
     position: relative;
-    bottom: -5vh;
+    bottom: 2vh;
     opacity: 0;
     transition: all ease-in-out 500ms;
     transition-delay: 200ms;
@@ -389,7 +390,7 @@ body.dark-theme .front {
 .social ul li {
     opacity: 0;
     position: relative;
-    left: -3rem;
+    left: -2rem;
     transition: all cubic-bezier(.17,.67,.29,1.5) 500ms;
 }
 
@@ -416,12 +417,14 @@ body.dark-theme .front {
     max-width: 100%;
 }
 
-.side-social ul{
+.side-social{
     right: 20px;
+    bottom: 0;
+    opacity: 0;
+    transform: translateY(1rem);
     width: 40px;
     position: fixed;
-    bottom: -50rem;
-    transition: all ease-in-out 750ms;
+    transition: all ease-in-out 200ms;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -429,10 +432,11 @@ body.dark-theme .front {
 }
 
 .social-scroll {
-    transform: translateY(-50rem);
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.social-scroll::after {
+.side-social::after {
     content: "";
     display: block;
     width: 2px;
@@ -442,7 +446,7 @@ body.dark-theme .front {
     transition: all ease-in-out 300ms;
 }
 
-.side-social:hover > .social-scroll::after{
+.side-social:hover::after{
     background-color: var(--day-main);
 }
 
@@ -451,7 +455,7 @@ body.dark-theme .front {
     transform: translateY(-0.1rem);
 }   
 
-body.dark-theme .side-social:hover > .social-scroll::after{
+body.dark-theme .side-social:hover::after{
     background-color: var(--night-main);
 }
 
@@ -512,7 +516,7 @@ body.dark-theme section:nth-child(even) {
     height: 1px;
     background-color: gray;
     margin-left: 0.5rem;
-    transition: all ease-in-out 750ms;
+    transition: all ease-in-out 350ms;
 }
 
 section:hover > .heading::after {
@@ -841,7 +845,7 @@ footer svg:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle farthest-corner at top right, #DDD 10%, #EEE 20%, #FFF 70%);
+    background: radial-gradient(circle farthest-corner at top right, #DDD 20%, #EEE 30%, #FFF 50%);
     position: absolute;
     opacity: 0;
     height: 100vh;
@@ -1089,12 +1093,6 @@ footer svg:hover {
         margin: 0;
         font-size: 1.25rem;
     }
-
-    .social-scroll {
-        position: static;
-        flex-direction: row;
-        width: auto;
-    }
     
     .social-scroll::after {
         display: none;
@@ -1172,7 +1170,7 @@ footer svg:hover {
         width: 90vw;
         margin-left: 0;
         padding: 1rem 5%;
-        border-radius: 0 0 20px 20px;
+        border-radius: 0 0 30px 30px;
         transition: all ease-in-out 600ms;
     }
     
@@ -1212,7 +1210,7 @@ footer svg:hover {
         margin-top: 0%;
         padding: 3rem 5%;
         width: 90%;
-        background: radial-gradient(circle farthest-corner at top left, #ccc 10%, #DDD 30%, #fff 60%);
+        background: radial-gradient(circle farthest-corner at top left, #ddd 20%, #eee 30%, #fff 50%);
     }
     
     body.dark-theme .front {

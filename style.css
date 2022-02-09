@@ -852,6 +852,8 @@ footer svg:hover {
     width: 100vw;
     left: 0;
     top: -2vh;
+    transform: scaleY(0.95);
+    transform-origin: top;
     visibility: hidden;
     font-weight: 300;
     font-size: 1.5rem;
@@ -863,6 +865,7 @@ footer svg:hover {
 .menu-active {
     top: 0;
     opacity: 1;
+    transform: scaleY(1);
     visibility: visible;
 }
 
@@ -947,11 +950,11 @@ body.dark-theme .hamb.active {
     border-radius: 10px;
     z-index: 11;
     transform-origin: 50%;
-    transition: all cubic-bezier(.17,.67,.29, 1.2) 500ms;
+    transition: all cubic-bezier(.17,.67,.29, 1.2) 600ms;
 }
 
 .hamb.active span:nth-child(2) {
-    transform: translateY(7px) rotate(135deg);
+    transform: translateY(7px) rotate(-225deg);
     background-color: var(--day-main);
 }
 

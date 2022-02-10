@@ -107,7 +107,6 @@ projects.forEach((proj) => {
 });
 
 // Loading animation for the front page and nav-bar.
-front[0].style.opacity = "1";
 setTimeout(loading_animation, 500);
 function loading_animation()
 {
@@ -119,15 +118,8 @@ function loading_animation()
         social.style.opacity = "1";
         social.style.left = "0";
     });
-    let fronts = [document.getElementById("front1"),
-                    document.getElementById("front2"),
-                        document.getElementById("front3")];
     
-    fronts.forEach((fr) => {
-        fr.style.opacity = "1";
-        fr.style.bottom = "0";                
-    });
-    fronts[2].style.opacity = "0.5";
+    front[0].style.opacity = "1";
     document.querySelector(".theme-button").classList.add("theme-on");
     hamb.classList.add("hamb-load");
 }

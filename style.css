@@ -65,6 +65,7 @@ nav {
     display: flex;
     gap: 1rem;
     font-size: 1rem;
+    align-items: center;
 }
 
 .title {
@@ -362,23 +363,21 @@ main {
     background-position: top;
     background-size: cover;
     opacity: 0;
+    transition: all ease-in-out 500ms;
 }
 
-#front1, #front2, #front3 {
-    position: relative;
-    bottom: 2vh;
-    opacity: 0;
-    transition: all ease-in-out 500ms;
-    transition-delay: 200ms;
+#front1 {
+    font-size: 1.1rem;
 }
 
 #front2 {
-    transition-delay: 500ms;
+    font-size: 3rem;
 }
 
 #front3
 {
-    transition-delay: 750ms;
+    font-size: 1.1rem;
+    color: #2229;
 }
 
 body.dark-theme .front {

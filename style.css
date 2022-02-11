@@ -1,6 +1,8 @@
 /* Background pictures from https://www.svgbackgrounds.com
     HIGHLY RECOMMEDED */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+
 
 * {
     scroll-behavior: smooth;
@@ -380,6 +382,10 @@ main {
     color: #2229;
 }
 
+body.dark-theme #front3 {
+    color: #AAA9;
+}
+
 body.dark-theme .front {
     background: url("./assets/front-dark.svg");
     background-position: top;
@@ -420,6 +426,7 @@ body.dark-theme .front {
     right: 20px;
     bottom: 0;
     opacity: 0;
+    visibility: hidden;
     transform: translateY(1rem);
     width: 40px;
     position: fixed;
@@ -432,6 +439,7 @@ body.dark-theme .front {
 
 .social-scroll {
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
 }
 
@@ -467,6 +475,7 @@ section {
     width: 80%;
     padding: 0 20%;
     min-height: 100vh;
+    transition: all ease-in-out 500ms;
 }
 
 section:nth-child(odd) {
@@ -616,7 +625,7 @@ body.dark-theme .content button:hover {
     box-shadow: 0px 0px 10px #CCC;
     background-color: #FFF;
     border-radius: 0.25rem;
-    border: 1px solid #8a2be280;
+    border: 1px solid #AAA;
     opacity: 0.67;
     user-select: none;
 }
@@ -628,7 +637,7 @@ body.dark-theme .content button:hover {
 body.dark-theme .skill-button {
     box-shadow: 0 0 5px #fff3;
     background-color: #121212;
-    border: 1px solid #ff05;
+    border: 1px solid #660;
 }
 
 .skill-button svg {
@@ -638,13 +647,14 @@ body.dark-theme .skill-button {
 
 .skill-button:hover {
     transition: all 500ms ease-in-out;
-    box-shadow: 0px 0px 10px var(--day-main);
+    border-color: #8a2be280;
     color: black;
     opacity: 1;
 }
 
 body.dark-theme .skill-button:hover {
-    box-shadow: 0 0 5px var(--night-main);
+    background-color: #111;
+    border-color: #AA0;
     color: white;
 }
 
@@ -706,6 +716,7 @@ body.dark-theme .project-titles {
     transition: all ease-in-out 300ms;
     font-weight: 400;
     user-select: none;
+    border-radius: 10%;
 }
 
 .project-titles li:hover  {

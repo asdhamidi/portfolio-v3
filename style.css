@@ -994,14 +994,33 @@ footer svg:hover {
     position: relative;
     width: 13px;
     height: 13px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
     background-color: var(--heart);
-    margin-left: 0.6rem;
-    transition: all ease-in-out 200ms;
+    margin-left: 0.5rem;
+    transition: all ease-in-out 400ms;
+    animation: heartbeat 1500ms ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: rotate(45deg) scale(0.9);
+    }
+    5% {
+        transform: rotate(45deg) scale(1);
+    }
+    10% {
+        transform: rotate(45deg) scale(1.1);
+    }
+    15% {
+        transform: rotate(45deg) scale(1.25);
+    }
+    50% {
+        transform: rotate(45deg) scale(1);
+    }
+    100% {
+        transform: rotate(45deg) scale(0.9);
+    }
 }
 
 #heart:before,
@@ -1015,22 +1034,17 @@ footer svg:hover {
     -o-border-radius: 50%;
     border-radius: 50%;
     background-color: var(--heart);
+    transition: all ease-in-out 400ms;
 }
 
 #heart:before{
     bottom: 0px;
     left: -7px;
-    transition: all ease-in-out 400ms;
 }
 
 #heart:after{
     top: -7px;
     right: 0px;
-    transition: all ease-in-out 400ms;
-}
-
-#heart:hover {
-    transform: rotate(45deg) scale(1.25);
 }
 
 @media screen and (max-width: 1200px) {

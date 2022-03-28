@@ -154,7 +154,9 @@ function openMenu()
 }
 
 // Heart color function
-function heart(e)
+setInterval(heart, 1500);
+
+function heart()
 {
     root.style.setProperty("--heart", `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`);
 }
